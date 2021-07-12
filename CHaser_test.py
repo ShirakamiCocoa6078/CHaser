@@ -76,11 +76,8 @@ def moveChack(value, MainItem, way):
                 return 'down right'
 def main():
     while(True):
-        up = 'client.walk_up()'
-        down = 'client.walk_down()'
-        left = 'client.walk_left()'
-        right = 'client.walk_right()'
-        moveList = [[[up, left],[left,up]],[up],[[up, right],[right,up]],[left],[right],[[down, left],[left,down]],[down],[[down, right],[right,down]]]
+        movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
+        moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
         if 1 in [value[0], value[3], value[5], value[7]]: #상대 확인
@@ -102,13 +99,20 @@ def main():
             if CV == 'item':
                 mainItem = value.index(3)
                 if mainItem <= 3:
-                    moveChack(value,mainItem,'up')
+                    mainmove = moveChack(value,mainItem,'up')
+                    mmove = mainmove.split(' ')
+                    for i in mmove:
+                        eval(movemain[i])
                 elif 4<= mainItem <= 6:
-                    moveChack(value,mainItem,'middle')
+                    mainmove = moveChack(value,mainItem,'middle')
+                    mmove = mainmove.split(' ')
+                    for i in mmove:
+                        eval(movemain[i])
                 elif mainItem >= 6:
-                    moveChack(value,mainItem,'down')
-                else:
-                    pass
+                    mainmove = moveChack(value,mainItem,'down')
+                    mmove = mainmove.split(' ')
+                    for i in mmove:
+                        eval(movemain[i])
 
 if __name__ == "__main__":
     main()
