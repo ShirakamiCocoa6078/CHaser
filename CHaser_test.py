@@ -76,6 +76,7 @@ def moveChack(value, MainItem, way):
                 return 'down right'
 def main():
     value = []
+    lastmove = 'None'
     while(True):
         movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
         moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
@@ -85,13 +86,17 @@ def main():
             value = [value[0], value[3], value[5], value[7]]
             enemy = value.index(1)
             if enemy == 0:
-                client.put_up()
+                value = client.put_up()
+                lastmove = 'None'
             elif enemy == 1:
-                client.put_left()
+                value = client.put_left()
+                lastmove = 'None'
             elif enemy == 2:
-                client.put_right()
+                value = client.put_right()
+                lastmove = 'None'
             elif enemy == 3:
-                client.put_down()
+                value = client.put_down()
+                lastmove = 'None'
             else:
                 print('error')
                 #exit()
@@ -104,16 +109,19 @@ def main():
                     mmove = mainmove.split(' ')
                     for i in mmove:
                         value = eval(movemain[i])
+                        lastmove = i
                 elif 4<= mainItem <= 6:
                     mainmove = moveChack(value,mainItem,'middle')
                     mmove = mainmove.split(' ')
                     for i in mmove:
                         value = eval(movemain[i])
+                        lastmove = i
                 elif mainItem >= 6:
                     mainmove = moveChack(value,mainItem,'down')
                     mmove = mainmove.split(' ')
                     for i in mmove:
                         value = eval(movemain[i])
+                        lastmove = i
 
 if __name__ == "__main__":
     main()
