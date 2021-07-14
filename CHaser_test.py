@@ -1,8 +1,4 @@
 import CHaser
-#0:なし（床）
-#1:相手
-#2:ブロック
-#3:アイテム
 client = CHaser.Client()
 #1.벽 확인
 #2.9칸 이내 다이아 확인
@@ -13,7 +9,6 @@ def checkValue(value): #주위 9칸 탐색
         return 'enemy'
     elif 2 in value:
         return 'block'
-    value = client.get_ready()
     value = [value[1], value[4], value[6], value[8]]
     if 0 not in value:
         return 'break'
@@ -133,24 +128,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-#def moveThink(): #상하좌우 9칸씩 확인
-    #valueL = client.look_left()
-    #valueR = client.look_right()
-    #valueU = client.look_up()
-    #valueD = client.look_down()
-    #if valueL in 3:
-    #    return 'L'
-    #elif valueR in 3:
-    #    return 'R'
-    #elif valueU in 3:
-    #    return 'U'
-    #elif valueD in 3:
-    #    return 'D'
-    #else:
-    #    return 'N'
-#def moveAI():
-    #value = moveThink()
-    #if value == 'L':
-    #    value = client.look_left()
-#def canmove(): #상하좌우 나가는 길 탐색
