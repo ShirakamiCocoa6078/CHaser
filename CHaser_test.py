@@ -1,5 +1,4 @@
 import CHaser
-client = CHaser.Client()
 #1.벽 확인
 #2.9칸 이내 다이아 확인
 def checkValue(value): #주위 9칸 탐색
@@ -72,10 +71,10 @@ def moveChack(value, MainItem, way):
 def main():
     value = []
     lastmove = 'None'
+    client = CHaser.Client()
     while(True):
         movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
         moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
-
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
         if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
             Evalue = [value[1], value[3], value[5], value[7]]
