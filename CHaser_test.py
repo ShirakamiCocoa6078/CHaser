@@ -75,6 +75,7 @@ def moveChack(value, MainItem, way):
             else:
                 return 'down right'
 def main():
+    value = []
     while(True):
         movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
         moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
@@ -102,17 +103,17 @@ def main():
                     mainmove = moveChack(value,mainItem,'up')
                     mmove = mainmove.split(' ')
                     for i in mmove:
-                        eval(movemain[i])
+                        value = eval(movemain[i])
                 elif 4<= mainItem <= 6:
                     mainmove = moveChack(value,mainItem,'middle')
                     mmove = mainmove.split(' ')
                     for i in mmove:
-                        eval(movemain[i])
+                        value = eval(movemain[i])
                 elif mainItem >= 6:
                     mainmove = moveChack(value,mainItem,'down')
                     mmove = mainmove.split(' ')
                     for i in mmove:
-                        eval(movemain[i])
+                        value = eval(movemain[i])
 
 if __name__ == "__main__":
     main()
