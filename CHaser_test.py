@@ -82,41 +82,49 @@ def main():
         moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
-        if 1 in [value[0], value[3], value[5], value[7]]: #상대 확인
-            value = [value[0], value[3], value[5], value[7]]
-            enemy = value.index(1)
-            if enemy == 0:
+        if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
+            Evalue = [value[1], value[3], value[5], value[7]]
+            enemy = Evalue.index(1)
+            if enemy == 0:#상단
                 value = client.put_up()
                 lastmove = 'None'
-            elif enemy == 1:
+            elif enemy == 1:#좌측
                 value = client.put_left()
                 lastmove = 'None'
-            elif enemy == 2:
+            elif enemy == 2:#우측
                 value = client.put_right()
                 lastmove = 'None'
-            elif enemy == 3:
+            elif enemy == 3:#하단
                 value = client.put_down()
                 lastmove = 'None'
             else:
                 print('error')
                 #exit()
+        elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> continue하고 위로
+            continue
         else:
             CV = checkValue(value)
             if CV == 'item':
                 mainItem = value.index(3)
                 if mainItem <= 3:
+                    uvalue = client.look_up()
                     mainmove = moveChack(value,mainItem,'up')
                     mmove = mainmove.split(' ')
                     for i in mmove:
                         value = eval(movemain[i])
                         lastmove = i
                 elif 4<= mainItem <= 6:
+                    if mainItem == 4:
+                        lvalue = client.look_left()
+                    else:
+                        rvalue = client.look_right()
                     mainmove = moveChack(value,mainItem,'middle')
                     mmove = mainmove.split(' ')
                     for i in mmove:
                         value = eval(movemain[i])
                         lastmove = i
                 elif mainItem >= 6:
+                    dvalue = client.look_down()
                     mainmove = moveChack(value,mainItem,'down')
                     mmove = mainmove.split(' ')
                     for i in mmove:
