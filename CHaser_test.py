@@ -7,12 +7,12 @@ def checkValue(value): #주위 9칸 탐색
     elif 1 in value:
         return 'enemy'
     elif 2 in value:
-        return 'block'
+        return 'break'
     value = [value[1], value[4], value[6], value[8]]
     if 0 not in value:
         return 'break'
     else:
-        return 'print('')'
+        return 'pass'
 def moveChack(value, MainItem, way):
     MCList = [[0,1,2],[3,5],[7,8,9]]
     waypoint = {'up' : 0, 'middle' : 1, 'down' : 2}
@@ -95,7 +95,7 @@ def main():
                 print('error')
                 #exit()
         elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> continue하고 위로
-            continue
+            value = client.look_left()
         else:
             CV = checkValue(value)
             if CV == 'item':
@@ -124,6 +124,8 @@ def main():
                     for i in mmove:
                         value = eval(movemain[i])
                         lastmove = i
+            elif CV == '':
+                pass
 
 if __name__ == "__main__":
     main()
