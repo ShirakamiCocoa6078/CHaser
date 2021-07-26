@@ -20,25 +20,20 @@ def main():
                 if enemy == 0:#상단
                     value = client.put_up()
                     lastmove = 'None'
-                    firstmove = True
                 elif enemy == 1:#좌측
                     value = client.put_left()
                     lastmove = 'None'
-                    firstmove = True
                 elif enemy == 2:#우측
                     value = client.put_right()
                     lastmove = 'None'
-                    firstmove = True
                 elif enemy == 3:#하단
                     value = client.put_down()
                     lastmove = 'None'
-                    firstmove = True
                 else:
                     print('error')
                     #exit()
             elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> 옆보고 continue하고 위로
                 value = client.look_left()
-                firstmove = True
                 continue
             else:
                 for i in range(4):
