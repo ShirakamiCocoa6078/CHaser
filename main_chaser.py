@@ -56,6 +56,10 @@ def main():
             elif waypoint[viewpoint] == 2:
                 if value[waypoint[viewpoint]-1] == 0:
                     value = client.walk_left()
+                elif value[waypoint[viewpoint] + 1] == 0:
+                    value = client.walk_right()
+                else:
+                    pass
 
 
 if __name__ == "__main__":
