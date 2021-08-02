@@ -7,6 +7,7 @@ firstmove = False
 viewpoint = 'None'
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
+waypoint = {'up':'1','left':'3','down':'5','right':'7'}
 def main():
     value = []
     client = CHaser.Client()
@@ -47,10 +48,14 @@ def main():
                             else:
                                 wayListcount = firstwaycount
                             firstway = wayList[wayListcount + 1]
-                value = eval(f'client.move_{firstway}()')
+                value = eval(f'client.walk_{firstway}()')
                 viewpoint = firstway
         else:
-            pass
+            if waypoint[viewpoint] == 3:#아이템
+                pass
+            elif waypoint[viewpoint] == 2:
+                if value[waypoint[viewpoint]-1] == 0:
+                    value = client.walk_left()
 
 
 if __name__ == "__main__":
