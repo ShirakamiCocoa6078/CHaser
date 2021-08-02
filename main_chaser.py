@@ -4,13 +4,14 @@ wayList = ['up','left','down','right']
 wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
 
 firstmove = False
-
+viewpoint = 'None'
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 def main():
     value = []
     client = CHaser.Client()
     firstway = random.choice(wayList)
+    firstwaycount = wayList.index(firstway)
     while(True):
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
         if firstmove == False:
@@ -40,7 +41,14 @@ def main():
                     for e in range(3):
                         WNum = [wayListNum[firstway].split(' ')]
                         if value[WNum[e]] in 0:
-                            firstway = random.choice(wayList)
+                            wayListcount = 0
+                            if firstwaycount == 4:
+                                pass
+                            else:
+                                wayListcount = firstwaycount
+                            firstway = wayList[wayListcount + 1]
+                value = eval(f'client.move_{firstway}()')
+                viewpoint = firstway
         else:
             pass
 
