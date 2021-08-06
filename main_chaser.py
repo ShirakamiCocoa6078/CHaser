@@ -38,7 +38,7 @@ def main():
                 value = client.look_left()
                 continue
             else:
-                for i in range(4):
+                for i in range(4): #맨처음 랜덤이동 값 정하기
                     for e in range(3):
                         WNum = [wayListNum[firstway].split(' ')]
                         if value[WNum[e]] in 0:
@@ -53,13 +53,14 @@ def main():
         else:
             if waypoint[viewpoint] == 3:#아이템
                 pass
-            elif waypoint[viewpoint] == 2:
-                if value[waypoint[viewpoint]-1] == 0:
+            elif waypoint[viewpoint] == 2:#바로앞(가는방향)이 벽일때
+                if value[waypoint[viewpoint]-1] == 0: #왼쪽이 열렸으면
                     value = client.walk_left()
-                elif value[waypoint[viewpoint] + 1] == 0:
+                elif value[waypoint[viewpoint] + 1] == 0: #오른쪽이 열렸으면
                     value = client.walk_right()
-                else:
-                    pass
+                elif value[waypoint[viewpoint]] == 2 and value[waypoint[viewpoint] +1] == 2 and value[waypoint[viewpoint] -1] == 2: # 가는 방향 3개 다 막혔을때
+                    if value[waypoint[viewpoint]]:
+                        pass
 
 
 if __name__ == "__main__":

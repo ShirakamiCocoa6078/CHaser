@@ -4,3 +4,12 @@
 3:アイテム
 
 완전 벽의 경우도 블럭(2)로 판정
+
+wayList = ['up','left','down','right']
+wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
+
+firstmove = False
+viewpoint = 'None'
+movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
+moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
+waypoint = {'up':'1','left':'3','down':'5','right':'7'}
