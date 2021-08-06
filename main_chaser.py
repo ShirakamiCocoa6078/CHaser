@@ -9,6 +9,11 @@ movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : '
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 waypoint = {'up':'1','left':'3','down':'5','right':'7'}
 LeftRight = {'up':['3','7'], 'left':['1','5'], 'down':['3','7'], 'right':['1','5']}
+def get_key(val, dic):
+    for key, value in dic.items():
+        if val == value:
+            return key
+    return('키가 없습니다')
 def main():
     value = []
     client = CHaser.Client()
@@ -21,21 +26,26 @@ def main():
                 Evalue = [value[1], value[3], value[5], value[7]]
                 enemy = Evalue.index(1)
                 if enemy == 0:#상단
+                    value = client.get_ready()
                     value = client.put_up()
                     lastmove = 'None'
                 elif enemy == 1:#좌측
+                    value = client.get_ready()
                     value = client.put_left()
                     lastmove = 'None'
                 elif enemy == 2:#우측
+                    value = client.get_ready()
                     value = client.put_right()
                     lastmove = 'None'
                 elif enemy == 3:#하단
+                    value = client.get_ready()
                     value = client.put_down()
                     lastmove = 'None'
                 else:
                     print('error')
                     #exit()
             elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> 옆보고 continue하고 위로
+                value = client.get_ready()
                 value = client.look_left()
                 continue
             else:
@@ -60,8 +70,10 @@ def main():
                 elif value[waypoint[viewpoint] + 1] == 0: #오른쪽이 열렸으면
                     value = client.walk_right()
                 elif value[waypoint[viewpoint]] == 2 and value[waypoint[viewpoint] +1] == 2 and value[waypoint[viewpoint] -1] == 2: # 가는 방향 3개 다 막혔을때
-                    if value[LeftRight[viewpoint]]:
-                        pass
+                    if value[LeftRight[viewpoint]][0] == 0:#가는 방향 기준 왼쪽이 비었을때
+                        value = eval(f'client.walk{get_key(value[LeftRight[viewpoint]][0], waypoint)}')
+                    elif value[LeftRight[viewpoint]][1]:#가는 방향 기준 오른쪽이 비었을때
+                        value = eval(f'client.walk{get_key(value[LeftRight[viewpoint]][1], waypoint)}')
 
 
 if __name__ == "__main__":

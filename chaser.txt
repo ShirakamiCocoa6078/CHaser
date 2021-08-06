@@ -20,3 +20,10 @@ moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up'
 LeftRight = {'up':['3','7'], 'left':['1','5'], 'down':['3','7'], 'right':['1','5']}
 
 waypoint = {'up':'1','left':'3','down':'5','right':'7'}
+
+def get_key(val, dic):
+    for key, value in dic.items():
+        if val == value:
+            return key
+    return('키가 없습니다')
+
