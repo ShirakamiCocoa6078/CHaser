@@ -8,6 +8,7 @@ viewpoint = 'None'
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 waypoint = {'up':'1','left':'3','down':'5','right':'7'}
+LeftRight = {'up':['3','7'], 'left':['1','5'], 'down':['3','7'], 'right':['1','5']}
 def main():
     value = []
     client = CHaser.Client()
@@ -59,7 +60,7 @@ def main():
                 elif value[waypoint[viewpoint] + 1] == 0: #오른쪽이 열렸으면
                     value = client.walk_right()
                 elif value[waypoint[viewpoint]] == 2 and value[waypoint[viewpoint] +1] == 2 and value[waypoint[viewpoint] -1] == 2: # 가는 방향 3개 다 막혔을때
-                    if value[waypoint[viewpoint]]:
+                    if value[LeftRight[viewpoint]]:
                         pass
 
 
