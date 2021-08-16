@@ -60,11 +60,12 @@ def main():
                                 wayListcount = firstwaycount
                             firstway = wayList[wayListcount + 1]
                 value = eval(f'client.walk_{firstway}()')
+                firstmove = True
                 viewpoint = firstway
         else:
-            if waypoint[viewpoint] == 3:#아이템
-                pass
-            elif waypoint[viewpoint] == 2:#바로앞(가는방향)이 벽일때
+            if value[waypoint[viewpoint]] == 3:#아이템
+                value = eval('client.look_()')
+            elif value[waypoint[viewpoint]] == 2:#바로앞(가는방향)이 벽일때
                 if value[waypoint[viewpoint]-1] == 0: #왼쪽이 열렸으면
                     value = client.walk_left()
                 elif value[waypoint[viewpoint] + 1] == 0: #오른쪽이 열렸으면
@@ -74,6 +75,8 @@ def main():
                         value = eval(f'client.walk{get_key(value[LeftRight[viewpoint]][0], waypoint)}')
                     elif value[LeftRight[viewpoint]][1]:#가는 방향 기준 오른쪽이 비었을때
                         value = eval(f'client.walk{get_key(value[LeftRight[viewpoint]][1], waypoint)}')
+                    else: #앞이 완전벽일때(방향전환)
+                        pass
 
 
 if __name__ == "__main__":
