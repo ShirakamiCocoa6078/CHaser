@@ -8,7 +8,7 @@
 wayList = ['up','left','down','right']
 
 wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
-
+[wayListNum[firstway].split(' ')]
 firstmove = False
 
 viewpoint = 'None'
