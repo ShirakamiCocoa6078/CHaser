@@ -43,7 +43,9 @@ def main():
             elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> 옆보고 continue하고 위로
                 value = client.look_left()
                 continue
-            """else:
+            else:
+                pass
+                """
                 for i in range(4): #맨처음 랜덤이동 값 정하기 (코드 새로 짜기)
                     for e in range(3):
                         WNum = [wayListNum[firstway].split(' ')]
