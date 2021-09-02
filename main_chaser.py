@@ -18,9 +18,12 @@ def main():
     firstmove = False
     client = CHaser.Client()
     firstway = random.choice(wayList)
+    print(firstway)
     while(True):
+        print('start')
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
         if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
+            print('enemy')
             Evalue = [value[1], value[3], value[5], value[7]]
             enemy = Evalue.index(1)
             if enemy == 0:#상단
@@ -39,10 +42,13 @@ def main():
                 print('error')
                 #exit()
         elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> 옆보고 continue하고 위로
+            print('enemy_look')
             value = client.look_left()
             continue
         elif firstmove == False:
+            print('first move cheak')
             while value[int(wayListNum[firstway][2])] == 2 or value[int(wayListNum[firstway][2])] == 0:
+                print(f'first move reset, {value[int(wayListNum[firstway][2])]}')
                 for i in range(2):
                     if wayList.index(firstway) == 3:
                         firstway = wayList[0]
@@ -50,7 +56,9 @@ def main():
                         firstway = wayList[wayList.index(firstway) + 1]
             value = eval(movemain[firstway])
             firstmove = True
+            print('end first moving')
         else:
+            print('moving')
             if value[waypoint[viewpoint]] == 3:#아이템
                 value = eval('client.look_()')
             elif value[waypoint[viewpoint]] == 2:#바로앞(가는방향)이 벽일때
