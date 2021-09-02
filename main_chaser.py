@@ -8,6 +8,7 @@ movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : '
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 waypoint = {'up':'1','left':'3','down':'5','right':'7'}
 LeftRight = {'up':['3','7'], 'left':['1','5'], 'down':['3','7'], 'right':['1','5']}
+toItem = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
 def get_key(val, dic):
     for key, value in dic.items():
         if val == value:
@@ -59,9 +60,9 @@ def main():
             print('end first moving')
         else:
             print('moving')
-            if value[int(waypoint[viewpoint])] == 3:#아이템
+            if value[int(waypoint[viewpoint])] == 3:#아이템 정면
                 print('item')
-                value = eval('client.look_left()')
+                value = eval(movemain[viewpoint])
             elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
                 print('front is block')
                 if value[int(waypoint[viewpoint])-1] == 0: #왼쪽 위가 열렸으면
@@ -91,6 +92,9 @@ def main():
                         if value[int(LeftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽 빔
                             value = eval(f'client.walk_{get_key(value[int(LeftRight[viewpoint][0])], waypoint)}()')
                             viewpoint = get_key(value[int(LeftRight[viewpoint][0])], waypoint)
+                        elif value[int(LeftRight[viewpoint][1])] == 0:#가는 방향 기준 왼쪽 빔
+                            value = eval(f'client.walk_{get_key(value[int(LeftRight[viewpoint][1])], waypoint)}()')
+                            viewpoint = get_key(value[int(LeftRight[viewpoint][1])], waypoint)
                         else:
                             pass
             else: #없을때

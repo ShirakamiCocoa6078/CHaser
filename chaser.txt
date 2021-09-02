@@ -21,6 +21,8 @@ LeftRight = {'up':['3','7'], 'left':['1','5'], 'down':['3','7'], 'right':['1','5
 
 waypoint = {'up':'1','left':'3','down':'5','right':'7'}
 
+toItem = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
+
 def get_key(val, dic):
     for key, value in dic.items():
         if val == value:
