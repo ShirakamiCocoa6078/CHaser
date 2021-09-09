@@ -15,6 +15,8 @@ moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up'
 
 waypoint = {'up':'1','left':'3','right':'5','down':'7'}
 
+Nviewpoint = {'up':'down','left':'right','down':'up','right':'left'}
+
 leftRight = {'up':['3','5'], 'left':['7','1'], 'right':['1','7'], 'down':['5','3']}
 
 diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
@@ -90,7 +92,9 @@ def main():
                     if lookbool == True:
                         if lookvalue[4] == 2:
                             if lookvalue[2] == 2 and lookvalue[8] == 2: #아이템 사방이 막혀있을때
-                                value = eval('')
+                                value = eval(f'client.walk_{viewpoint}()')
+                                value = client.get_ready()
+                                value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                 lookbool = False
                     value = eval(movemain[viewpoint])
                 else:#정면이 아닌 다른곳에 아이템이 있을때
