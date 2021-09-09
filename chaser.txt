@@ -19,6 +19,8 @@ moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up'
 
 LeftRight = {'up':['3','7'], 'left':['1','5'], 'down':['3','7'], 'right':['1','5']}
 
+diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
+
 waypoint = {'up':'1','left':'3','down':'5','right':'7'}
 
 toItem = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
