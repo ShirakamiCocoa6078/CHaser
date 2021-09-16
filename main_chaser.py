@@ -125,51 +125,34 @@ def main():
             elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
                 print('front is block')
 
-                if value[int(waypoint[viewpoint])-1] == 0: #왼쪽 위가 열렸으면
-                    print('and left up is open')
+                if value[int(waypoint[viewpoint])-1] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
+                    print('and left and left up open')
+                    value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
 
-                    if value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
-                        print('and left and left up open')
-                        value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
-
-                    else:
-                        print('pass')
-                        #pass
-
-                elif value[int(waypoint[viewpoint]) + 1] == 0: #오른쪽 위가 열렸으면
-                    print('and right up is open')
-
-                    if value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
-                        print('and right and right up open')
-                        value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
-
-                    else:
-                        print('pass')
-                        #pass
+                elif value[int(waypoint[viewpoint]) + 1] == 0 and value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
+                    print('and right and right up open')
+                    value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
 
                 elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
                     print('and front 3 is all block')
 
-                    if value[int(leftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽이 비었을때
-                        print('and left is open')
-                        value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
+                    #if value[int(leftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽이 비었을때
+                        #print('and left is open')
+                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
 
-                    elif value[int(leftRight[viewpoint][1])]:#가는 방향 기준 오른쪽이 비었을때
-                        print('and right is open')
-                        value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
+                    #elif value[int(leftRight[viewpoint][1])] == 0:#가는 방향 기준 오른쪽이 비었을때
+                        #print('and right is open')
+                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
 
-                    else: #앞이 완전벽일때(방향전환)
-                        print('and all block the front')
-                        if value[int(leftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽 빔
-                            value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
-                            viewpoint = get_key(value[int(leftRight[viewpoint][0])], waypoint)
+                #elif True: #앞이 완전벽일때(방향전환)
+                    #print('and all block the front')
+                    #if value[int(leftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽 빔
+                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
+                        #viewpoint = get_key(value[int(leftRight[viewpoint][0])], waypoint)
 
-                        elif value[int(leftRight[viewpoint][1])] == 0:#가는 방향 기준 왼쪽 빔
-                            value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
-                            viewpoint = get_key(value[int(leftRight[viewpoint][1])], waypoint)
-                        else:
-                            print('pass')
-                            #pass
+                    #elif value[int(leftRight[viewpoint][1])] == 0:#가는 방향 기준 왼쪽 빔
+                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
+                        #viewpoint = get_key(value[int(leftRight[viewpoint][1])], waypoint)
                 else:
                     Exit = None
                     ExitList = [1,3,5,7]
