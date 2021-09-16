@@ -39,6 +39,7 @@ def main():
     while(True):
         print('start')
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
+        print('get ready')
 
         if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
             print('enemy')
@@ -84,9 +85,9 @@ def main():
             print('end first moving')
         else:
 
-            print('moving')
+            print(f'moving, value = {value}')
 
-            if value in 3:
+            if 3 in value:
                 print('find item')
                 if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                     if lookbool == True:
@@ -132,7 +133,8 @@ def main():
                         value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
 
                     else:
-                        continue
+                        print('pass')
+                        #pass
 
                 elif value[int(waypoint[viewpoint]) + 1] == 0: #오른쪽 위가 열렸으면
                     print('and right up is open')
@@ -142,7 +144,8 @@ def main():
                         value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
 
                     else:
-                        continue
+                        print('pass')
+                        #pass
 
                 elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
                     print('and front 3 is all block')
@@ -165,8 +168,24 @@ def main():
                             value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
                             viewpoint = get_key(value[int(leftRight[viewpoint][1])], waypoint)
                         else:
-                            pass
+                            print('pass')
+                            #pass
+                else:
+                    Exit = None
+                    ExitList = [1,3,5,7]
+                    for i in ExitList:
+                        if value[i] == 2:
+                            continue
+                        elif value[i] == 0 or value[i] == 3:
+                            Exit = i
+                            break
+                        else:
+                            break
+                    if Exit != None:
+                        value = eval(f'client.walk_{toItem[Exit]}')
+                        viewpoint = toItem[Exit]
             else: #없을때
+                print('moveing viewpoint')
                 value = eval(movemain[viewpoint])
 
 
