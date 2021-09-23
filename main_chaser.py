@@ -21,8 +21,10 @@ leftRight = {'up':['3','5'], 'left':['7','1'], 'right':['1','7'], 'down':['5','3
 
 diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
 
-toItem = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
+toMove = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
+Moveto = {'up' : 1, 3 : 'left', 'right' : 5, 'down' : 7}
 
+lastMove = None
 def get_key(val, dic):
     for key, value in dic.items():
         if val == value:
@@ -81,7 +83,8 @@ def main():
                         firstway = wayList[wayList.index(firstway) + 1]
             value = eval(movemain[firstway])
             firstmove = True
-            viewpoint = firstway
+            viewpoint = movemain[firstway][12:][:-2]
+            lastMove = movemain[firstway][12:][:-2]
             print('end first moving')
         else:
 
@@ -96,11 +99,27 @@ def main():
                                 value = eval(f'client.walk_{viewpoint}()')
                                 value = client.get_ready()
                                 value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
+                                lastMove = Nviewpoint[viewpoint]
+                                viewpoint = Nviewpoint[viewpoint]
                                 lookbool = False
-                    value = eval(movemain[viewpoint])
+                    else:
+                        value = eval(movemain[viewpoint])
+                elif value[1] == 3 or value[3] == 3 or value[5] == 3  or value[7] == 3:
+                    print('item in UDLR')
+                    valueBool = type(value.index(3)) == list
+                    if valueBool:
+                        item_loca = value.index(3)[0]
+                    else:
+                        item_loca = value.index(3)
+                    viewpoint = toMove[item_loca]
+                    value = eval(f'client.look_{viewpoint}()')
                 else:#정면이 아닌 다른곳에 아이템이 있을때
                     print('item in not front')
-                    item_loca = value.index(3)
+                    valueBool = type(value.index(3)) == list
+                    if valueBool:
+                        item_loca = value.index(3)[0]
+                    else:
+                        item_loca = value.index(3)
                     space = None
                     for i in diagoline[item_loca]:
                         if value[i] == 0:
@@ -112,11 +131,27 @@ def main():
                     if item_loca == 0 or item_loca == 2 or item_loca == 6 or item_loca == 8: #아이템이 대각선에 있을때
                         print('item in diagonal')
                         if space != None:
-                            value = eval(f'client.walk_{toItem[space]}()')
+                            value = eval(f'client.walk_{toMove[space]}()')
+                            lastMove = toMove[space]
                         else:
-                            pass
+                            Exit = None
+                            ExitList = [1,3,5,7]
+                            for i in ExitList:
+                                if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                    continue
+                                if value[i] == 2:
+                                    continue
+                                elif value[i] == 0 or value[i] == 3:
+                                    Exit = i
+                                    break
+                                else:
+                                    break
+                            if Exit != None:
+                                value = eval(f'client.walk_{toMove[Exit]}')
+                                viewpoint = toMove[Exit]
+                                lastMove = toMove[Exit]
                     else:
-                        viewpoint = toItem[item_loca]
+                        viewpoint = toMove[item_loca]
                         value = eval(f'client.look_{viewpoint}()')
                         lookvalue = value
                         lookbool = True
@@ -126,37 +161,70 @@ def main():
                 print('front is block')
 
                 if value[int(waypoint[viewpoint])-1] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
-                    print('and left and left up open')
-                    value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
+                    print(f'and left and left up open, lastMove : {lastMove}')
+                    if toMove[int(leftRight[viewpoint][0])] == Moveto[Nviewpoint[lastMove]]:
+                        print(f'but it was already gone way')
+                        if int(leftRight[viewpoint][1]) == 0:
+                            value = eval(f'client.wlak_{toMove[int(leftRight[viewpoint][1])]}()')
+                        else:
+                            print('but front is block')
+                            Exit = None
+                            ExitList = [1,3,5,7]
+                            for i in ExitList:
+                                if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                    continue
+                                if value[i] == 2:
+                                    continue
+                                elif value[i] == 0 or value[i] == 3:
+                                    Exit = i
+                                    break
+                                else:
+                                    break
+                            if Exit != None:
+                                value = eval(f'client.walk_{toMove[Exit]}()')
+                                viewpoint = toMove[Exit]
+                                lastMove = toMove[Exit]
+                    else:
+                        value = eval(f'client.walk_{lastMove}()')
+                        value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
+                        lastMove = toMove[int(leftRight[viewpoint][0])]
 
                 elif value[int(waypoint[viewpoint]) + 1] == 0 and value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
-                    print('and right and right up open')
-                    value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
+                    print(f'and right and right up open, lastMove : {lastMove}')
+                    if toMove[int(leftRight[viewpoint][1])] == Moveto[Nviewpoint[lastMove]]:
+                        print(f'but it was already gone way')
+                        if int(leftRight[viewpoint][1]) == 0:
+                            value = eval(f'client.wlak_{toMove[int(leftRight[viewpoint][0])]}()')
+                        else:
+                            print('but front is block')
+                            Exit = None
+                            ExitList = [1,3,5,7]
+                            for i in ExitList:
+                                if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                    continue
+                                if value[i] == 2:
+                                    continue
+                                elif value[i] == 0 or value[i] == 3:
+                                    Exit = i
+                                    break
+                                else:
+                                    break
+                            if Exit != None:
+                                value = eval(f'client.walk_{toMove[Exit]}()')
+                                viewpoint = toMove[Exit]
+                                lastMove = toMove[Exit]
+                    else:
+                        value = eval(f'client.walk_{lastMove}()')
+                        value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
+                        lastMove = toMove[int(leftRight[viewpoint][1])]
 
                 elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
-                    print('and front 3 is all block')
-
-                    #if value[int(leftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽이 비었을때
-                        #print('and left is open')
-                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
-
-                    #elif value[int(leftRight[viewpoint][1])] == 0:#가는 방향 기준 오른쪽이 비었을때
-                        #print('and right is open')
-                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
-
-                #elif True: #앞이 완전벽일때(방향전환)
-                    #print('and all block the front')
-                    #if value[int(leftRight[viewpoint][0])] == 0:#가는 방향 기준 왼쪽 빔
-                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][0])], waypoint)}()')
-                        #viewpoint = get_key(value[int(leftRight[viewpoint][0])], waypoint)
-
-                    #elif value[int(leftRight[viewpoint][1])] == 0:#가는 방향 기준 왼쪽 빔
-                        #value = eval(f'client.walk_{get_key(value[int(leftRight[viewpoint][1])], waypoint)}()')
-                        #viewpoint = get_key(value[int(leftRight[viewpoint][1])], waypoint)
-                else:
+                    print(f'and front 3 is all block, lastMove : {lastMove}')
                     Exit = None
                     ExitList = [1,3,5,7]
                     for i in ExitList:
+                        if value[i] == Moveto[Nviewpoint[lastMove]]:
+                            continue
                         if value[i] == 2:
                             continue
                         elif value[i] == 0 or value[i] == 3:
@@ -165,11 +233,15 @@ def main():
                         else:
                             break
                     if Exit != None:
-                        value = eval(f'client.walk_{toItem[Exit]}')
-                        viewpoint = toItem[Exit]
+                        value = eval(f'client.walk_{toMove[Exit]}()')
+                        viewpoint = toMove[Exit]
+                        lastMove = toMove[Exit]
+                    else:
+                        value = eval(f'client.walk_{lastMove}()')
             else: #없을때
-                print('moveing viewpoint')
+                print(f'moving viewpoint, lastMove : {lastMove}')
                 value = eval(movemain[viewpoint])
+                lastMove = viewpoint
 
 
 if __name__ == "__main__":
