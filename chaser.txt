@@ -34,3 +34,24 @@ def get_key(val, dic):
             return key
     return('키가 없습니다')
 
+last error log:
+######################################################################################
+port: 2009
+name: main
+host: 127.0.0.1
+up
+start
+get ready
+first move cheak
+end first moving
+start
+get ready
+moving, value = [0, 3, 2, 2, 0, 0, 0, 0, 0]
+find item
+Traceback (most recent call last):
+  File ".\main_chaser.py", line 289, in <module>
+    main()
+  File ".\main_chaser.py", line 149, in main
+    viewpoint = toMove[item_loca]
+UnboundLocalError: local variable 'item_loca' referenced before assignment
+######################################################################################

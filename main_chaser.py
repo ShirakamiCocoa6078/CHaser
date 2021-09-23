@@ -7,8 +7,6 @@ wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
 
 viewpoint = 'None'
 
-lookbool = False
-
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
@@ -32,6 +30,8 @@ def get_key(val, dic):
     return('키가 없습니다')
 
 def main():
+    enemycount = 0
+    lookbool = False
     value = []
     firstmove = False
     client = CHaser.Client()
@@ -67,10 +67,53 @@ def main():
                 print('error')
                 #exit()
 
-        elif 1 in [value[0],value[2],value[6],value[8]]:#각 모서리에 적이 있으면 -> 옆보고 continue하고 위로
+        elif 1 in [value[0],value[2],value[6],value[8]] and enemycount <= 4:#각 모서리에 적이 있으면 + 턴 4번 안지났으면 -> 옆보고 continue하고 위로
             print('enemy_look')
             value = client.look_left()
+            enemycount += 1
             continue
+
+        elif enemycount > 4: #턴 4번 넘었을때
+            enemy = Evalue.index(1)
+            if enemy == 0:#좌측 상단 적
+                if value[5] == 0:
+                    value = client.walk_right()
+                    enemycount = 0
+                elif value[7] == 0:
+                    value = client.walk_down()
+                    enemycount = 0
+                else:
+                    value = eval(random.choice(['client.walk_left()', 'client.walk_up()']))
+            elif enemy == 2:
+                if value[3] == 0:
+                    value = client.walk_left()
+                    enemycount = 0
+                elif value[7] == 0:
+                    value = client.walk_down()
+                    enemycount = 0
+                else:
+                    value = eval(random.choice(['client.walk_right()', 'client.walk_up()']))
+                    enemycount = 0
+            elif enemy == 6:
+                if value[1] == 0:
+                    value = client.walk_up()
+                    enemycount = 0
+                elif value[5] == 0:
+                    value = client.walk_right()
+                    enemycount = 0
+                else:
+                    value = eval(random.choice(['client.walk_left()', 'client.walk_right()']))
+                    enemycount = 0
+            elif enemy == 8:
+                if value[1] == 0:
+                    value = client.walk_up()
+                    enemycount = 0
+                elif value[3] == 0:
+                    value = client.walk_left()
+                    enemycount = 0
+                else:
+                    value = eval(random.choice(['client.walk_right()', 'client.walk_down()']))
+                    enemycount = 0
 
         elif firstmove == False:
             print('first move cheak')
@@ -103,7 +146,10 @@ def main():
                                 viewpoint = Nviewpoint[viewpoint]
                                 lookbool = False
                     else:
-                        value = eval(movemain[viewpoint])
+                        viewpoint = toMove[item_loca]
+                        value = eval(f'client.look_{viewpoint}()')
+                        lookvalue = value
+                        lookbool = True
                 elif value[1] == 3 or value[3] == 3 or value[5] == 3  or value[7] == 3:
                     print('item in UDLR')
                     valueBool = type(value.index(3)) == list
@@ -150,11 +196,6 @@ def main():
                                 value = eval(f'client.walk_{toMove[Exit]}')
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
-                    else:
-                        viewpoint = toMove[item_loca]
-                        value = eval(f'client.look_{viewpoint}()')
-                        lookvalue = value
-                        lookbool = True
 
 
             elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
