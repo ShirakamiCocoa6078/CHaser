@@ -39,7 +39,9 @@ def main():
     print(firstway)
 
     while(True):
+        byunsuDic = {'viewpoint' : viewpoint, 'lastMove' : lastMove, 'enemycount' : enemycount, 'lookbool' : lookbool, 'value' : value, 'firstmove' : firstmove, 'firstway' : firstway, 'Evalue' : Evalue, 'enemy' : enemy, 'value[int(wayListNum[firstway[2])]' : value[int(wayListNum[firstway[2]])], 'Nviewpoint' : Nviewpoint, 'value.index(3)' : value.index(3), 'item_loca' : item_loca, 'lookvalue' : lookvalue, 'lookbool' : lookbool, 'space' : space, 'Exit' : Exit, 'value[int(waypoint[viewpoint])]' : value[int(waypoint[viewpoint])], 'int[leftRight[viewpoint][1])]' : int[leftRight[viewpoint][1]], 'int[leftRight[viewpoint][0])]' : int(leftRight[viewpoint][1]), 'Moveto[Nviewpoint[lastMove]]' : Moveto[Nviewpoint[lastMove]]} if firstmove == True else 'sans'
         print('start')
+        print('print variable, ', byunsuDic)
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
         print('get ready')
 
@@ -49,19 +51,15 @@ def main():
             enemy = Evalue.index(1)
             if enemy == 0:#상단
                 value = client.put_up()
-                lastmove = 'None'
 
             elif enemy == 1:#좌측
                 value = client.put_left()
-                lastmove = 'None'
 
             elif enemy == 2:#우측
                 value = client.put_right()
-                lastmove = 'None'
 
             elif enemy == 3:#하단
                 value = client.put_down()
-                lastmove = 'None'
 
             else:
                 print('error')
@@ -211,7 +209,7 @@ def main():
                     if toMove[int(leftRight[viewpoint][0])] == Moveto[Nviewpoint[lastMove]]:
                         print(f'but it was already gone way')
                         if int(leftRight[viewpoint][1]) == 0:
-                            value = eval(f'client.wlak_{toMove[int(leftRight[viewpoint][1])]}()')
+                            value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                         else:
                             print('but front is block')
                             Exit = None
@@ -226,12 +224,8 @@ def main():
                                     break
                                 else:
                                     break
-                            if Exit != None:
-                                value = eval(f'client.walk_{toMove[Exit]}()')
-                                viewpoint = toMove[Exit]
-                                lastMove = toMove[Exit]
                     else:
-                        value = eval(f'client.walk_{lastMove}()')
+                        #value = eval(f'client.walk_{lastMove}()')
                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                         lastMove = toMove[int(leftRight[viewpoint][0])]
 
@@ -260,7 +254,7 @@ def main():
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
                     else:
-                        value = eval(f'client.walk_{lastMove}()')
+                        #value = eval(f'client.walk_{lastMove}()')
                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                         lastMove = toMove[int(leftRight[viewpoint][1])]
 
