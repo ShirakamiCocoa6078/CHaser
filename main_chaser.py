@@ -5,8 +5,6 @@ wayList = ['up','left','down','right']
 
 wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
 
-viewpoint = 'None'
-
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
@@ -21,15 +19,6 @@ diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
 
 toMove = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
 Moveto = {'up' : 1, 3 : 'left', 'right' : 5, 'down' : 7}
-lookbool = None
-firstway = None
-Evalue = None
-enemy = None
-item_loca = None
-lookvalue = None
-space = None
-Exit = None
-lastMove = None
 def get_key(val, dic):
     for key, value in dic.items():
         if val == value:
@@ -37,10 +26,20 @@ def get_key(val, dic):
     return('키가 없습니다')
 
 def main():
+    lookbool = None
+    firstway = None
+    Evalue = None
+    enemy = None
+    item_loca = None
+    lookvalue = None
+    space = None
+    Exit = None
+    lastMove = None
     enemycount = 0
     lookbool = False
-    value = []
+    viewpoint = 'None'
     firstmove = False
+    value = []
     client = CHaser.Client()
     firstway = random.choice(wayList)
     print(firstway)
