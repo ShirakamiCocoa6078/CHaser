@@ -241,7 +241,7 @@ def main():
                     if toMove[int(leftRight[viewpoint][1])] == Moveto[Nviewpoint[lastMove]]:
                         print(f'but it was already gone way')
                         if int(leftRight[viewpoint][1]) == 0:
-                            value = eval(f'client.wlak_{toMove[int(leftRight[viewpoint][0])]}()')
+                            value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                         else:
                             print('but front is block')
                             Exit = None
