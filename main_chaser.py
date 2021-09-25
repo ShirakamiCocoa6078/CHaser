@@ -21,7 +21,14 @@ diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
 
 toMove = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
 Moveto = {'up' : 1, 3 : 'left', 'right' : 5, 'down' : 7}
-
+lookbool = None
+firstway = None
+Evalue = None
+enemy = None
+item_loca = None
+lookvalue = None
+space = None
+Exit = None
 lastMove = None
 def get_key(val, dic):
     for key, value in dic.items():
@@ -39,7 +46,7 @@ def main():
     print(firstway)
 
     while(True):
-        byunsuDic = {'viewpoint' : viewpoint, 'lastMove' : lastMove, 'enemycount' : enemycount, 'lookbool' : lookbool, 'value' : value, 'firstmove' : firstmove, 'firstway' : firstway, 'Evalue' : Evalue, 'enemy' : enemy, 'value[int(wayListNum[firstway[2])]' : value[int(wayListNum[firstway[2]])], 'Nviewpoint' : Nviewpoint, 'value.index(3)' : value.index(3), 'item_loca' : item_loca, 'lookvalue' : lookvalue, 'lookbool' : lookbool, 'space' : space, 'Exit' : Exit, 'value[int(waypoint[viewpoint])]' : value[int(waypoint[viewpoint])], 'int[leftRight[viewpoint][1])]' : int[leftRight[viewpoint][1]], 'int[leftRight[viewpoint][0])]' : int(leftRight[viewpoint][1]), 'Moveto[Nviewpoint[lastMove]]' : Moveto[Nviewpoint[lastMove]]} if firstmove == True else 'sans'
+        byunsuDic = f"'viewpoint' : {viewpoint}, 'lastMove' : {lastMove}, 'enemycount' : {enemycount}, 'lookbool' : {lookbool}, 'value' : {value}, 'firstmove' : {firstmove}, 'firstway' : {firstway}, 'Evalue' : {Evalue}, 'enemy' : {enemy}, 'value[int(wayListNum[firstway[2])]' : {value[int(wayListNum[firstway[2]])]}, 'Nviewpoint' : {Nviewpoint}, 'value.index(3)' : {value.index(3)}, 'item_loca' : {item_loca}, 'lookvalue' : {lookvalue}, 'lookbool' : {lookbool}, 'space' : {space}, 'Exit' : {Exit}, 'value[int(waypoint[viewpoint])]' : {value[int(waypoint[viewpoint])]}, 'int[leftRight[viewpoint][1])]' : {int[leftRight[viewpoint][1]]}, 'int[leftRight[viewpoint][0])]' : {int(leftRight[viewpoint][1])}, 'Moveto[Nviewpoint[lastMove]]' : {Moveto[Nviewpoint[lastMove]]}" if firstmove == True else 'sans'
         print('start')
         print('print variable, ', byunsuDic)
         value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
@@ -72,6 +79,7 @@ def main():
             continue
 
         elif enemycount > 4: #턴 4번 넘었을때
+            Evalue = [value[1], value[3], value[5], value[7]]
             enemy = Evalue.index(1)
             if enemy == 0:#좌측 상단 적
                 if value[5] == 0:

@@ -12,6 +12,15 @@ wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
 firstmove = False
 
 viewpoint = 'None'
+lookbool = None
+firstway = None
+Evalue = None
+enemy = None
+item_loca = None
+lookvalue = None
+space = None
+Exit = None
+lastMove = None
 
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 
