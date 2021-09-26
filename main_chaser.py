@@ -27,6 +27,7 @@ def get_key(val, dic):
         if val == value:
             return key
     return('키가 없습니다')
+
 def find_index(data, target):
     res = []
     lis = data
@@ -37,6 +38,7 @@ def find_index(data, target):
         except:
             break
     return res
+
 def main():
     firstway = None
     Evalue = None
@@ -51,6 +53,7 @@ def main():
     viewpoint = 'None'
     firstmove = False
     value = []
+    lookDelete = []
     turn = 0
     client = CHaser.Client()
     firstway = random.choice(wayList)
@@ -152,6 +155,9 @@ def main():
 #-------------------------이동(아이템)----------------------------------------------------------------------------
             if 3 in value:
                 print('find item')
+                item_loca = find_index(value, 3)
+                for i in lookDelete:
+                    item_loca.pop(i)
                 if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                     if lookbool:
                         if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
@@ -159,8 +165,11 @@ def main():
                             lastMove = Nviewpoint[viewpoint]
                         else:
                             value = eval(f'client.walk{viewpoint}()')
+                            lookDelete = []
                     else:
-                        pass
+                        value = eval(f'client.look_{viewpoint}()')
+                        lookvalue = value
+                        lookbool = True
 
 
 #-------------------------이동(공간)----------------------------------------------------------------------------
