@@ -44,10 +44,18 @@ def get_key(val, dic):
     return('키가 없습니다')
 
 상하좌우 방향 기준 이동 요약
-앞 : value = eval(f'client.walk{viewpoint}()')
-뒤 : value = eval(f'client.walk{Nviewpoint[viewpoint]}()')
-왼 : value = eval(f'client.walk{toMove[leftRight[Moveto[viewpoint]][0]]}()')
-오 : value = eval(f'client.walk{toMove[leftRight[Moveto[viewpoint]][1]]}()')
+앞 :
+value = eval(f'client.walk{viewpoint}()')
+
+뒤 :
+value = eval(f'client.walk{Nviewpoint[viewpoint]}()')
+
+왼 :
+value = eval(f'client.walk{toMove[leftRight[Moveto[viewpoint]][0]]}()')
+
+오 :
+value = eval(f'client.walk{toMove[leftRight[Moveto[viewpoint]][1]]}()')
+
 last error log:
 ######################################################################################
 

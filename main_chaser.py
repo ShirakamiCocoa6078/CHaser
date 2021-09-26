@@ -144,25 +144,9 @@ def main():
             if 3 in value:
                 print('find item')
                 if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
-                    if lookbool == True:#client.look_방향이 된 상태일때
-                        if lookvalue[4] == 2:#                          ㄱ
-                            if lookvalue[2] == 2 and lookvalue[8] == 2: #아이템 사방이 막혀있을때
-                                value = eval(f'client.walk_{viewpoint}()')
-                                value = client.get_ready()
-                                value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
-                                lastMove = Nviewpoint[viewpoint]
-                                viewpoint = Nviewpoint[viewpoint]
-                                lookbool = False
-                    else:
-                        valueBool = type(value.index(3)) == list
-                        if valueBool:
-                            item_loca = value.index(3)[0]
-                        else:
-                            item_loca = value.index(3)
-                        viewpoint = toMove[item_loca]
-                        value = eval(f'client.look_{viewpoint}()')
-                        lookvalue = value
-                        lookbool = True
+                    value = eval(f'client.walk{viewpoint}()')
+                    value = client.get_ready()
+                    value = eval(f'client.walk{Nviewpoint[viewpoint]}()')
                 elif value[1] == 3 or value[3] == 3 or value[5] == 3  or value[7] == 3:
                     print('item in UDLR')
                     valueBool = type(value.index(3)) == list
