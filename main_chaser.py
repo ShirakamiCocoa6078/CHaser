@@ -153,23 +153,73 @@ def main():
         else:
             print(f'moving, value = {value}')
 #-------------------------이동(아이템)----------------------------------------------------------------------------
-            if 3 in value:
+            if 3 in value: #아이템이 있을때
                 print('find item')
                 item_loca = find_index(value, 3)
                 for i in lookDelete:
                     item_loca.pop(i)
-                if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
-                    if lookbool:
-                        if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
-                            value = eval(f'client.walk{Nviewpoint[viewpoint]}()')
-                            lastMove = Nviewpoint[viewpoint]
+                for item in item_loca:
+                    if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
+                        if lookbool:
+                            if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
+                                if type(item_loca) != list:
+                                    value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
+                                    lastMove = Nviewpoint[viewpoint]
+                                    break
+                                else:
+                                    lookDelete.append(int(waypoint[viewpoint]))
+                                    continue
+                            else:
+                                value = eval(f'client.walk_{viewpoint}()')
+                                lookDelete = []
+                                break
                         else:
-                            value = eval(f'client.walk{viewpoint}()')
-                            lookDelete = []
-                    else:
-                        value = eval(f'client.look_{viewpoint}()')
-                        lookvalue = value
-                        lookbool = True
+                            value = eval(f'client.look_{viewpoint}()')
+                            lookvalue = value
+                            lookbool = True
+                            break
+                    elif value[int(waypoint[viewpoint])] != 3 and item_loca: #아이템이 존재하고 정면이 아닌곳에 아이템이 있을때
+                        viewpoint = item_loca[0]
+                        continue
+                    else:#정면이 아닌 다른곳에 아이템이 있을때(대각선)
+                        print('item in diagonal')
+                        if value[int(diagoline[item_loca[0]][0])] == 2 and value[int(diagoline[item_loca[0]][1])] == 2: #가는방법 없을때
+                            lookDelete.append(int(item_loca[0]))
+                            continue
+                        else:
+                            value
+                        valueBool = type(value.index(3)) == list
+                        if valueBool:
+                            item_loca = value.index(3)[0]
+                        else:
+                            item_loca = value.index(3)
+                        space = None
+                        for i in diagoline[item_loca]:
+                            if value[i] == 0:
+                                space = i
+                                return
+                            else:
+                                continue
+                        if space != None:
+                            value = eval(f'client.walk_{toMove[space]}()')
+                            lastMove = toMove[space]
+                        else:
+                            Exit = None
+                            ExitList = [1,3,5,7]
+                            for i in ExitList:
+                                if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                    continue
+                                if value[i] == 2:
+                                    continue
+                                elif value[i] == 0 or value[i] == 3:
+                                    Exit = i
+                                    break
+                                else:
+                                    break
+                            if Exit != None:
+                                value = eval(f'client.walk_{toMove[Exit]}')
+                                viewpoint = toMove[Exit]
+                                lastMove = toMove[Exit]
 
 
 #-------------------------이동(공간)----------------------------------------------------------------------------
