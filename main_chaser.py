@@ -187,7 +187,7 @@ def main():
                             lookDelete.append(int(item_loca[0]))
                             continue
                         else:
-                            value
+                            value#수정하다 만 곳
                         valueBool = type(value.index(3)) == list
                         if valueBool:
                             item_loca = value.index(3)[0]
