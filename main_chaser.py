@@ -164,9 +164,10 @@ def main():
                     if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                         if lookbool:
                             if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
-                                if type(item_loca) != list:
+                                if len(item_loca) == 0:
                                     value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                     lastMove = Nviewpoint[viewpoint]
+                                    viewpoint = Nviewpoint[viewpoint]
                                     break
                                 else:
                                     lookDelete.append(int(waypoint[viewpoint]))
@@ -261,7 +262,7 @@ def main():
                     else:
                         value = eval(f'client.walk_{lastMove}()')
 
-                elif value[int(waypoint[viewpoint])-1] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
+                elif value[int(viewleftRight[viewpoint][0])] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
                     print(f'and left and left up open, lastMove : {lastMove}')
                     if toMove[int(leftRight[viewpoint][0])] == Moveto[Nviewpoint[lastMove]]: #이미 갔던 길일때
                         print(f'but it was already gone way')
@@ -286,7 +287,7 @@ def main():
                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                         lastMove = toMove[int(leftRight[viewpoint][0])]
 
-                elif value[int(waypoint[viewpoint]) + 1] == 0 and value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
+                elif value[int(viewleftRight[viewpoint][1])] == 0 and value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
                     print(f'and right and right up open, lastMove : {lastMove}')
                     if toMove[int(leftRight[viewpoint][1])] == Moveto[Nviewpoint[lastMove]]:
                         print(f'but it was already gone way')
