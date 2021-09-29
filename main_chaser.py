@@ -1,6 +1,6 @@
 import CHaser
 import random
-
+import time
 
 #ファンインソンが作りました。
 
@@ -92,12 +92,13 @@ def main():
                 #exit()
 
         elif 1 in [value[0],value[2],value[6],value[8]] and enemycount <= 4:#각 모서리에 적이 있으면 + 턴 4번 안지났으면 -> 옆보고 continue하고 위로
-            print(f'enemy_look, viewpoint = {viewpoint}')
+            print(f'enemy_look, viewpoint = {viewpoint}, enemycount = {enemycount}')
             value = client.look_left()
             enemycount += 1
             continue
-
-        elif enemycount > 4: #턴 4번 넘었을때
+#오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
+#오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
+        elif enemycount > 4: #턴 4번 넘었을때 오류 뜬 부분
             Evalue = [value[0], value[2], value[6], value[8]]
             enemy = Evalue.index(1)
             if enemy == 0:#좌측 상단 적
@@ -109,7 +110,7 @@ def main():
                     enemycount = 0
                 else:
                     value = eval(random.choice(['client.walk_left()', 'client.walk_up()']))
-            elif enemy == 2:
+            elif enemy == 1:
                 if value[3] == 0:
                     value = client.walk_left()
                     enemycount = 0
@@ -119,7 +120,7 @@ def main():
                 else:
                     value = eval(random.choice(['client.walk_right()', 'client.walk_up()']))
                     enemycount = 0
-            elif enemy == 6:
+            elif enemy == 2:
                 if value[1] == 0:
                     value = client.walk_up()
                     enemycount = 0
@@ -129,7 +130,7 @@ def main():
                 else:
                     value = eval(random.choice(['client.walk_left()', 'client.walk_right()']))
                     enemycount = 0
-            elif enemy == 8:
+            elif enemy == 3:
                 if value[1] == 0:
                     value = client.walk_up()
                     enemycount = 0
@@ -139,7 +140,8 @@ def main():
                 else:
                     value = eval(random.choice(['client.walk_right()', 'client.walk_down()']))
                     enemycount = 0
-
+#오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
+#오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
         elif firstmove == False:
             print('first move cheak')
             while value[int(wayListNum[firstway][2])] == 2:
@@ -183,7 +185,7 @@ def main():
                 elif value[int(waypoint[viewpoint])] != 3 and (value[int(leftRight[viewpoint][0])] == 3 or value[int(leftRight[viewpoint][1])] == 3 or value[Moveto[Nviewpoint[viewpoint]]] == 3): #아이템이 존재하고 정면이 아닌곳에 아이템이 있을때
                     print('item in LRD')
                     viewpoint = changeViewp[item_loca[0]]
-                    value = eval(f'client_look_{viewpoint}()')
+                    value = eval(f'client.look_{viewpoint}()')
                     lookvalue = value
                 #대각선에 아이템이 있을때 대처용 이동
                 elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
