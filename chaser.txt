@@ -58,6 +58,8 @@ def get_key(val, dic):
             return key
     return('키가 없습니다')
 
+def Delitem(value):
+
 상하좌우 방향 기준 이동 요약
 앞 :
 value = eval(f'client.walk{viewpoint}()')
