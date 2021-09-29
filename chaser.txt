@@ -22,6 +22,11 @@ space = None
 Exit = None
 lastMove = None
 
+f.write('\n')
+
+
+
+
 movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : 'client.walk_left()', 'right' : 'client.walk_right()', 'None' : 'pass'}
 
 Nviewpoint = {'up':'down','left':'right','down':'up','right':'left'}
