@@ -20,6 +20,8 @@ leftRight = {'up':['3','5'], 'left':['7','1'], 'right':['1','7'], 'down':['5','3
 
 diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
 
+viewleftRight = {'up': ['0','2'], 'left' : ['6','0'], 'right' : ['2','8'], 'down': ['8','6']}
+
 toMove = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
 Moveto = {'up' : 1, 'left' : 3, 'right' : 5, 'down' : 7}
 def get_key(val, dic):
@@ -94,7 +96,7 @@ def main():
             continue
 
         elif enemycount > 4: #턴 4번 넘었을때
-            Evalue = [value[1], value[3], value[5], value[7]]
+            Evalue = [value[0], value[2], value[6], value[8]]
             enemy = Evalue.index(1)
             if enemy == 0:#좌측 상단 적
                 if value[5] == 0:
@@ -231,11 +233,13 @@ def main():
 
 #-------------------------이동(공간)----------------------------------------------------------------------------
             elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
-                print('front is block')
+                print(f'front is block, viewpoint = {viewpoint}')
 
                 if value[Moveto[viewpoint]] == 2 and value[int(leftRight[viewpoint][0])] == 2 and value[int(leftRight[viewpoint][1])] == 2:#보는 방향 앞 옆 전부 막혔을때
+                    print('left, right, up all block')
                     if value[Moveto[Nviewpoint[viewpoint]]] != 2: #반대가 벽이 아니라면
                         value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
+                        viewpoint = Nviewpoint[viewpoint]
                 elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
                     print(f'and front 3 is all block, lastMove : {lastMove}')
                     Exit = None
@@ -310,6 +314,9 @@ def main():
                         #value = eval(f'client.walk_{lastMove}()')
                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                         lastMove = toMove[int(leftRight[viewpoint][1])]
+            #elif value[int(viewleftRight[viewpoint][0])] == 2 and value[int(viewleftRight[viewpoint][1])] == 2:#보는방향앞 양옆 벽일때
+                #Lvalue = eval(f'client.look_{viewpoint}()')
+                
             else: #없을때
                 print(f'moving viewpoint, lastMove : {lastMove}')
                 value = eval(movemain[viewpoint])
