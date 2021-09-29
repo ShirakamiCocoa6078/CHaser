@@ -187,7 +187,14 @@ def main():
                             lookDelete.append(int(item_loca[0]))
                             continue
                         else:
-                            value#수정하다 만 곳
+                            for a in int(diagoline[item_loca[0]]):
+                                if value[a] == 0:
+                                    value = eval(f'client.walk_{toMove[a]}()')
+                                    break
+                                else:
+                                    continue
+                            #수정하다 만 곳
+                            """
                         valueBool = type(value.index(3)) == list
                         if valueBool:
                             item_loca = value.index(3)[0]
@@ -220,7 +227,7 @@ def main():
                                 value = eval(f'client.walk_{toMove[Exit]}')
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
-
+"""
 
 #-------------------------이동(공간)----------------------------------------------------------------------------
             elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
