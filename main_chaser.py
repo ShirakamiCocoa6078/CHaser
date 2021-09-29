@@ -18,7 +18,7 @@ Nviewpoint = {'up':'down','left':'right','down':'up','right':'left'}
 
 leftRight = {'up':['3','5'], 'left':['7','1'], 'right':['1','7'], 'down':['5','3']}
 
-diagoline = {'0': ['1','3'], '2': ['1','5'], '6' : ['7','3'], '8': ['5','7']}
+diagoline = {0: ['1','3'], 2: ['1','5'], 6 : ['7','3'], 8: ['5','7']}
 
 viewleftRight = {'up': ['0','2'], 'left' : ['6','0'], 'right' : ['2','8'], 'down': ['8','6']}
 
@@ -161,6 +161,10 @@ def main():
                 for i in lookDelete:
                     item_loca.pop(i)
                 for item in item_loca:
+                    if item_loca == []:
+                        value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
+                        viewpoint = Nviewpoint[viewpoint]
+                        break
                     if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                         if lookbool:
                             if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
@@ -196,7 +200,6 @@ def main():
                                     break
                                 else:
                                     continue
-                            #수정하다 만 곳
                             """
                         valueBool = type(value.index(3)) == list
                         if valueBool:
