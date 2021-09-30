@@ -67,7 +67,7 @@ try:
         lookDelete = []
         turn = 0
         client = CHaser.Client()
-        firstway = random.choice(wayList)
+        firstway = 'up' #random.choice(wayList)
         print(firstway)
         try:
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
@@ -158,20 +158,14 @@ try:
                     print('first move cheak')
                     f.write('first move cheak\n')
                     Exit = None
-                    print(1)
-                    ExitList = random.shuffle([1,3,5,7])
-                    print(2)
+                    ExitList = [1,3,5,7]
+                    random.shuffle(ExitList)
                     for i in ExitList:
-                        print(3)
                         if value[i] == 2:
-                            print(4)
                             continue
                         elif value[i] == 0 or value[i] == 3:
-                            print(5)
                             Exit = i
-                            print(6)
                             break
-                    print(7)
                     firstway = toMove[Exit]
                     value = eval(movemain[firstway])
                     firstmove = True
@@ -241,6 +235,7 @@ try:
                                 f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
                                 Exit = None
                                 ExitList = [1,3,5,7]
+                                random.shuffle(ExitList)
                                 for i in ExitList:
                                     if value[i] == Moveto[Nviewpoint[lastMove]]:
                                         continue
@@ -255,8 +250,6 @@ try:
                                     value = eval(f'client.walk_{toMove[Exit]}()')
                                     viewpoint = toMove[Exit]
                                     lastMove = toMove[Exit]
-                                else:
-                                    value = eval(f'client.walk_{lastMove}()')
 
                             elif value[int(viewleftRight[viewpoint][0])] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
                                 print(f'and left and left up open, lastMove : {lastMove}')
@@ -270,7 +263,8 @@ try:
                                         print('but front is block')
                                         f.write('but front is block\n')
                                         Exit = None
-                                        ExitList = random.shuffle([1,3,5,7])
+                                        ExitList = [1,3,5,7]
+                                        random.shuffle(ExitList)
                                         for i in ExitList:
                                             if value[i] == Moveto[Nviewpoint[lastMove]]:
                                                 continue
@@ -281,6 +275,10 @@ try:
                                                 break
                                             else:
                                                 break
+                                        if Exit != None:
+                                            value = eval(f'client.walk_{toMove[Exit]}()')
+                                            viewpoint = toMove[Exit]
+                                            lastMove = toMove[Exit]
                                 else:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                                     lastMove = toMove[int(leftRight[viewpoint][0])]
@@ -298,6 +296,7 @@ try:
                                         f.write('but front is block\n')
                                         Exit = None
                                         ExitList = [1,3,5,7]
+                                        random.shuffle(ExitList)
                                         for i in ExitList:
                                             if value[i] == Moveto[Nviewpoint[lastMove]]:
                                                 continue
@@ -319,7 +318,8 @@ try:
                                 print('find exit')
                                 f.write('find exit')
                                 Exit = None
-                                ExitList = random.shuffle([1,3,5,7])
+                                ExitList = [1,3,5,7]
+                                random.shuffle(ExitList)
                                 for i in ExitList:
                                     if value[i] == Moveto[Nviewpoint[lastMove]]:
                                         continue
@@ -355,7 +355,8 @@ try:
                             print(f'and front 3 is all block, lastMove : {lastMove}')
                             f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
                             Exit = None
-                            ExitList = random.shuffle([1,3,5,7])
+                            ExitList = [1,3,5,7]
+                            random.shuffle(ExitList)
                             for i in ExitList:
                                 if value[i] == Moveto[Nviewpoint[lastMove]]:
                                     continue
@@ -370,8 +371,6 @@ try:
                                 value = eval(f'client.walk_{toMove[Exit]}()')
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
-                            else:
-                                value = eval(f'client.walk_{lastMove}()')
 
                         elif value[int(viewleftRight[viewpoint][0])] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
                             print(f'and left and left up open, lastMove : {lastMove}')
@@ -386,6 +385,7 @@ try:
                                     f.write('but front is block\n')
                                     Exit = None
                                     ExitList = [1,3,5,7]
+                                    random.shuffle(ExitList)
                                     for i in ExitList:
                                         if value[i] == Moveto[Nviewpoint[lastMove]]:
                                             continue
@@ -396,6 +396,10 @@ try:
                                             break
                                         else:
                                             break
+                                    if Exit != None:
+                                        value = eval(f'client.walk_{toMove[Exit]}()')
+                                        viewpoint = toMove[Exit]
+                                        lastMove = toMove[Exit]
                             else:
                                 value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                                 lastMove = toMove[int(leftRight[viewpoint][0])]
@@ -413,6 +417,7 @@ try:
                                     f.write('but front is block\n')
                                     Exit = None
                                     ExitList = [1,3,5,7]
+                                    random.shuffle(ExitList)
                                     for i in ExitList:
                                         if value[i] == Moveto[Nviewpoint[lastMove]]:
                                             continue
@@ -435,6 +440,7 @@ try:
                             f.write('find exit')
                             Exit = None
                             ExitList = [1,3,5,7]
+                            random.shuffle(ExitList)
                             for i in ExitList:
                                 if value[i] == Moveto[Nviewpoint[lastMove]]:
                                     continue

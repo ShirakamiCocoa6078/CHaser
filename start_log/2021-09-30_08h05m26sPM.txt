@@ -1,0 +1,5 @@
+start, turn : 1
+get ready, value = [2, 2, 2, 0, 0, 2, 2, 2, 2]
+first move cheak
+error
+game is close
