@@ -1,0 +1,63 @@
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit
+start, turn : 73
+get ready
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+find exit
+start, turn : 74
+get ready
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit
+start, turn : 75
+get ready
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+find exit
+start, turn : 76
+get ready
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit
+start, turn : 77
+get ready
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+find exit
+start, turn : 78
+get ready
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit
+start, turn : 79
+get ready
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+find exit
+start, turn : 80
+get ready
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit
+start, turn : 81
+get ready
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+find exit
+start, turn : 82
+get ready
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit
+start, turn : 83
+get ready
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+find exit
+start, turn : 84
+get ready
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+find exit

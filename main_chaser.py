@@ -1,11 +1,17 @@
-try:
-    import CHaser
-    import random
-    import time
-    import logging
-    import traceback
-    #ファンインソンが作りました。
+import CHaser
+import random
+import time
+import logging
+import traceback
 
+global f
+tm = time.localtime(time.time())
+string = time.strftime('%Y-%m-%d_%Ih%Mm%Ss%p', tm)
+f = open(f"./start_log/{string}.txt", 'w')
+
+#ファンインソンが作りました。
+
+try:
     wayList = ['up','left','down','right']
 
     wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
@@ -50,7 +56,6 @@ try:
         Evalue = None
         enemy = None
         item_loca = None
-        space = None
         lookbool = False
         lookvalue = None
         Exit = None
@@ -65,10 +70,6 @@ try:
         firstway = random.choice(wayList)
         print(firstway)
         try:
-            tm = time.localtime(time.time())
-            string = time.strftime('%Y-%m-%d_%Ih%Mm%Ss%p', tm)
-            global f
-            f = open(f"./start_log/{string}.txt", 'w')
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
             print(f"logfile's name = {string}.txt, _ERROR.log")
             while(True):
@@ -78,8 +79,8 @@ try:
                 f.write(f'start, turn : {turn}\n')
                 #print('print variable, ', byunsuDic)
                 value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
-                print('get ready')
-                f.write('get ready\n')
+                print(f'get ready, value = {value}')
+                f.write(f'get ready, value = {value}\n')
 
                 if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
                     print('enemy')
@@ -309,7 +310,7 @@ try:
                                 print('find exit')
                                 f.write('find exit')
                                 Exit = None
-                                ExitList = [1,3,5,7]
+                                ExitList = random.shuffle([1,3,5,7])
                                 for i in ExitList:
                                     if value[i] == Moveto[Nviewpoint[lastMove]]:
                                         continue
