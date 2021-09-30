@@ -1,5 +1,0 @@
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\akzm0\Desktop\CHaser Test\CHaser\main_chaser.py", line 117, in main
-    enemy = Evalue.index(1)
-ValueError: 1 is not in list
-
