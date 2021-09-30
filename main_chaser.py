@@ -67,7 +67,7 @@ try:
         lookDelete = []
         turn = 0
         client = CHaser.Client()
-        firstway = 'up' #random.choice(wayList)
+        firstway = 'down' #random.choice(wayList)
         print(firstway)
         try:
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
@@ -201,16 +201,18 @@ try:
                         if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                             if lookbool:
                                 if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
-                                    value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
-                                    lastMove = Nviewpoint[viewpoint]
-                                    viewpoint = Nviewpoint[viewpoint]
+                                    value = eval(f'client.walk_{Nviewpoint[lastMove]}()')
+                                    lastMove = Nviewpoint[lastMove]
+                                    viewpoint = Nviewpoint[lastMove]
                                     lookbool = False
                                 else:
                                     value = eval(f'client.walk_{viewpoint}()')
+                                    lastMove = viewpoint
                                     lookDelete = []
                                     lookbool = False
                             else:
                                 value = eval(f'client.look_{viewpoint}()')
+                                lastMove = viewpoint
                                 lookvalue = value
                                 lookbool = True
                         elif value[int(waypoint[viewpoint])] != 3 and (value[int(leftRight[viewpoint][0])] == 3 or value[int(leftRight[viewpoint][1])] == 3 or value[Moveto[Nviewpoint[viewpoint]]] == 3): #아이템이 존재하고 정면이 아닌곳에 아이템이 있을때
@@ -218,6 +220,7 @@ try:
                             f.write('item in LRD\n')
                             viewpoint = changeViewp[item_loca[0]]
                             value = eval(f'client.look_{viewpoint}()')
+                            lastMove = viewpoint
                             lookvalue = value
                         #대각선에 아이템이 있을때 대처용 이동
                         elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
@@ -230,6 +233,7 @@ try:
                                 if value[Moveto[Nviewpoint[viewpoint]]] != 2: #반대가 벽이 아니라면
                                     value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                     viewpoint = Nviewpoint[viewpoint]
+                                    lastMove = Nviewpoint[viewpoint]
                             elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
                                 print(f'and front 3 is all block, lastMove : {lastMove}')
                                 f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
@@ -259,6 +263,7 @@ try:
                                     f.write('but it was already gone way\n')
                                     if int(leftRight[viewpoint][1]) == 0:
                                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
+                                        lastMove = toMove[int(leftRight[viewpoint][0])]
                                     else:
                                         print('but front is block')
                                         f.write('but front is block\n')
@@ -291,6 +296,7 @@ try:
                                     f.write('but it was already gone way\n')
                                     if int(leftRight[viewpoint][1]) == 0:
                                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
+                                        lastMove = toMove[int(leftRight[viewpoint][1])]
                                     else:
                                         print('but front is block')
                                         f.write('but front is block\n')
@@ -351,6 +357,7 @@ try:
                             if value[Moveto[Nviewpoint[viewpoint]]] != 2: #반대가 벽이 아니라면
                                 value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                 viewpoint = Nviewpoint[viewpoint]
+                                lastMove = Nviewpoint[viewpoint]
                         elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
                             print(f'and front 3 is all block, lastMove : {lastMove}')
                             f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
@@ -380,6 +387,7 @@ try:
                                 f.write(f'but it was already gone way\n')
                                 if int(leftRight[viewpoint][1]) == 0:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
+                                    lastMove = toMove[int(leftRight[viewpoint][0])]
                                 else:
                                     print('but front is block')
                                     f.write('but front is block\n')
@@ -412,6 +420,7 @@ try:
                                 f.write('but it was already gone way\n')
                                 if int(leftRight[viewpoint][1]) == 0:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
+                                    lastMove = toMove[int(leftRight[viewpoint][1])]
                                 else:
                                     print('but front is block')
                                     f.write('but front is block\n')
