@@ -1,0 +1,5 @@
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 160, in main
+    while value[int(wayListNum[firstway][2])] == 2:
+KeyboardInterrupt
+

@@ -1,6 +1,6 @@
 moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
 front is block 2, viewpoint = right
-find exit
+find exit	
 start, turn : 73
 get ready
 moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]

@@ -1,5 +1,5 @@
 start, turn : 1
-get ready
+get ready, value = [2, 0, 3, 0, 0, 0, 2, 0, 0]
 first move cheak
 error
 game is close

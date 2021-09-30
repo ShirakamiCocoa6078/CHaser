@@ -157,13 +157,22 @@ try:
                 elif firstmove == False:
                     print('first move cheak')
                     f.write('first move cheak\n')
-                    while value[int(wayListNum[firstway][2])] == 2:
-                        for i in range(2):
-                            if wayList.index(firstway) == 3:
-                                firstway = wayList[0]
-
-                            else:
-                                firstway = wayList[wayList.index(firstway) + 1]
+                    Exit = None
+                    print(1)
+                    ExitList = random.shuffle([1,3,5,7])
+                    print(2)
+                    for i in ExitList:
+                        print(3)
+                        if value[i] == 2:
+                            print(4)
+                            continue
+                        elif value[i] == 0 or value[i] == 3:
+                            print(5)
+                            Exit = i
+                            print(6)
+                            break
+                    print(7)
+                    firstway = toMove[Exit]
                     value = eval(movemain[firstway])
                     firstmove = True
                     viewpoint = movemain[firstway][12:][:-2]
@@ -235,7 +244,7 @@ try:
                                 for i in ExitList:
                                     if value[i] == Moveto[Nviewpoint[lastMove]]:
                                         continue
-                                    if value[i] == 2:
+                                    elif value[i] == 2:
                                         continue
                                     elif value[i] == 0 or value[i] == 3:
                                         Exit = i
@@ -261,11 +270,11 @@ try:
                                         print('but front is block')
                                         f.write('but front is block\n')
                                         Exit = None
-                                        ExitList = [1,3,5,7]
+                                        ExitList = random.shuffle([1,3,5,7])
                                         for i in ExitList:
                                             if value[i] == Moveto[Nviewpoint[lastMove]]:
                                                 continue
-                                            if value[i] == 2:
+                                            elif value[i] == 2:
                                                 continue
                                             elif value[i] == 0 or value[i] == 3:
                                                 Exit = i
@@ -292,7 +301,7 @@ try:
                                         for i in ExitList:
                                             if value[i] == Moveto[Nviewpoint[lastMove]]:
                                                 continue
-                                            if value[i] == 2:
+                                            elif value[i] == 2:
                                                 continue
                                             elif value[i] == 0 or value[i] == 3:
                                                 Exit = i
@@ -314,7 +323,7 @@ try:
                                 for i in ExitList:
                                     if value[i] == Moveto[Nviewpoint[lastMove]]:
                                         continue
-                                    if value[i] == 2:
+                                    elif value[i] == 2:
                                         continue
                                     elif value[i] == 0 or value[i] == 3:
                                         Exit = i
@@ -346,11 +355,11 @@ try:
                             print(f'and front 3 is all block, lastMove : {lastMove}')
                             f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
                             Exit = None
-                            ExitList = [1,3,5,7]
+                            ExitList = random.shuffle([1,3,5,7])
                             for i in ExitList:
                                 if value[i] == Moveto[Nviewpoint[lastMove]]:
                                     continue
-                                if value[i] == 2:
+                                elif value[i] == 2:
                                     continue
                                 elif value[i] == 0 or value[i] == 3:
                                     Exit = i
@@ -380,7 +389,7 @@ try:
                                     for i in ExitList:
                                         if value[i] == Moveto[Nviewpoint[lastMove]]:
                                             continue
-                                        if value[i] == 2:
+                                        elif value[i] == 2:
                                             continue
                                         elif value[i] == 0 or value[i] == 3:
                                             Exit = i
@@ -407,7 +416,7 @@ try:
                                     for i in ExitList:
                                         if value[i] == Moveto[Nviewpoint[lastMove]]:
                                             continue
-                                        if value[i] == 2:
+                                        elif value[i] == 2:
                                             continue
                                         elif value[i] == 0 or value[i] == 3:
                                             Exit = i
@@ -429,7 +438,7 @@ try:
                             for i in ExitList:
                                 if value[i] == Moveto[Nviewpoint[lastMove]]:
                                     continue
-                                if value[i] == 2:
+                                elif value[i] == 2:
                                     continue
                                 elif value[i] == 0 or value[i] == 3:
                                     Exit = i

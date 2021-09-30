@@ -31,6 +31,8 @@ movemain = {'up' : 'client.walk_up()', 'down' : 'client.walk_down()', 'left' : '
 
 Nviewpoint = {'up':'down','left':'right','down':'up','right':'left'}
 
+wayListNum = {'up': '0 1 2', 'left': '0 3 6', 'down': '6 7 8','right': '2 5 8'}
+
 moveList = [[['up', 'left'],['left','up']],['up'],[['up', 'right'],['right','up']],['left'],['right'],[['down', 'left'],['left','down']],['down'],[['down', 'right'],['right','down']]]
 
 leftRight = {'up':['3','5'], 'left':['7','1'], 'right':['1','7'], 'down':['5','3']}
@@ -150,3 +152,15 @@ value = eval(f'client.walk_{viewpoint}()')
                             value = eval(f'client.walk_{toMove[Exit]}')
                             viewpoint = toMove[Exit]
                             lastMove = toMove[Exit]
+
+
+
+"""
+                    while value[int(wayListNum[firstway][2])] == 2:
+                        for i in range(2):
+                            if wayList.index(firstway) == 3:
+                                firstway = wayList[0]
+
+                            else:
+                                firstway = wayList[wayList.index(firstway) + 1]
+                                """

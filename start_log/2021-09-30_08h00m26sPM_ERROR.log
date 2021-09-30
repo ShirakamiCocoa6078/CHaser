@@ -1,0 +1,9 @@
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 81, in main
+    value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\CHaser.py", line 69, in get_ready
+    return self.__order("gr", True)
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\CHaser.py", line 41, in __order
+    responce = self.client.recv(4096)
+KeyboardInterrupt
+
