@@ -65,9 +65,10 @@ try:
         firstmove = False
         value = []
         lookDelete = []
+        ExitRoof = []
         turn = 0
         client = CHaser.Client()
-        firstway = 'down' #random.choice(wayList)
+        firstway = 'up' #random.choice(wayList)
         print(firstway)
         try:
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
@@ -79,8 +80,8 @@ try:
                 f.write(f'start, turn : {turn}\n')
                 #print('print variable, ', byunsuDic)
                 value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
-                print(f'get ready, value = {value}')
-                f.write(f'get ready, value = {value}\n')
+                print(f'get ready, value = {value}, lastmove = {lastMove}')
+                f.write(f'get ready, value = {value}, lastmove = {lastMove}\n')
 
                 if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
                     print('enemy')
@@ -157,22 +158,30 @@ try:
                 elif firstmove == False:
                     print('first move cheak')
                     f.write('first move cheak\n')
-                    Exit = None
-                    ExitList = [1,3,5,7]
-                    random.shuffle(ExitList)
-                    for i in ExitList:
-                        if value[i] == 2:
-                            continue
-                        elif value[i] == 0 or value[i] == 3:
-                            Exit = i
-                            break
-                    firstway = toMove[Exit]
-                    value = eval(movemain[firstway])
-                    firstmove = True
-                    viewpoint = movemain[firstway][12:][:-2]
-                    lastMove = movemain[firstway][12:][:-2]
-                    print('end first moving')
-                    f.write('end first moving\n')
+                    if value[Moveto[firstway]] != 2:
+                        value = eval(movemain[firstway])
+                        firstmove = True
+                        viewpoint = movemain[firstway][12:][:-2]
+                        lastMove = movemain[firstway][12:][:-2]
+                        print('end first moving')
+                        f.write('end first moving\n')
+                    else:
+                        Exit = None
+                        ExitList = [1,3,5,7]
+                        random.shuffle(ExitList)
+                        for i in ExitList:
+                            if value[i] == 2:
+                                continue
+                            elif value[i] == 0 or value[i] == 3:
+                                Exit = i
+                                break
+                        firstway = toMove[Exit]
+                        value = eval(movemain[firstway])
+                        firstmove = True
+                        viewpoint = movemain[firstway][12:][:-2]
+                        lastMove = movemain[firstway][12:][:-2]
+                        print('end first moving')
+                        f.write('end first moving\n')
                 else:
                     print(f'moving, value = {value}')
                     f.write(f'moving, value = {value}\n')
@@ -212,7 +221,6 @@ try:
                                     lookbool = False
                             else:
                                 value = eval(f'client.look_{viewpoint}()')
-                                lastMove = viewpoint
                                 lookvalue = value
                                 lookbool = True
                         elif value[int(waypoint[viewpoint])] != 3 and (value[int(leftRight[viewpoint][0])] == 3 or value[int(leftRight[viewpoint][1])] == 3 or value[Moveto[Nviewpoint[viewpoint]]] == 3): #아이템이 존재하고 정면이 아닌곳에 아이템이 있을때
@@ -220,14 +228,33 @@ try:
                             f.write('item in LRD\n')
                             viewpoint = changeViewp[item_loca[0]]
                             value = eval(f'client.look_{viewpoint}()')
-                            lastMove = viewpoint
                             lookvalue = value
                         #대각선에 아이템이 있을때 대처용 이동
                         elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
                             print(f'front is block 1, viewpoint = {viewpoint}')
                             f.write(f'front is block 1, viewpoint = {viewpoint}\n')
+                            if [ExitRoof[0], ExitRoof[1]] != [ExitRoof[2], ExitRoof[3]]:
+                                ExitRoof = []
+                            elif[ExitRoof[0], ExitRoof[1]] == [ExitRoof[2], ExitRoof[3]]:
+                                Exit = None
+                                ExitList = [1,3,5,7].remove(Moveto[ExitRoof[2]])
+                                random.shuffle(ExitList)
+                                for i in ExitList:
+                                    if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                        continue
+                                    elif value[i] == 2:
+                                        continue
+                                    elif value[i] == 0 or value[i] == 3:
+                                        Exit = i
+                                        break
+                                    else:
+                                        break
+                                if Exit != None:
+                                    value = eval(f'client.walk_{toMove[Exit]}()')
+                                    viewpoint = toMove[Exit]
+                                    lastMove = toMove[Exit]
 
-                            if value[Moveto[viewpoint]] == 2 and value[int(leftRight[viewpoint][0])] == 2 and value[int(leftRight[viewpoint][1])] == 2:#보는 방향 앞 옆 전부 막혔을때
+                            elif value[int(waypoint[viewpoint])] == 2 and value[int(viewleftRight[viewpoint][1])] == 2 and value[int(viewleftRight[viewpoint][0])] == 2: # 가는 방향 3개 다 막혔을때
                                 print('left, right, up all block')
                                 f.write('left, right, up all block\n')
                                 if value[Moveto[Nviewpoint[viewpoint]]] != 2: #반대가 벽이 아니라면
@@ -358,7 +385,7 @@ try:
                                 value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                 viewpoint = Nviewpoint[viewpoint]
                                 lastMove = Nviewpoint[viewpoint]
-                        elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
+                        elif value[int(waypoint[viewpoint])] == 2 and value[int(viewleftRight[viewpoint][1])] == 2 and value[int(viewleftRight[viewpoint][0])] == 2: # 가는 방향 3개 다 막혔을때
                             print(f'and front 3 is all block, lastMove : {lastMove}')
                             f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
                             Exit = None

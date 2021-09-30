@@ -8,5 +8,6 @@ def main():
         print(value)
         value = client.walk_right()
 
+
 if __name__ == "__main__":
     main()
