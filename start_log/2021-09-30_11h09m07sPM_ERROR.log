@@ -1,0 +1,5 @@
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 503, in main
+    value = eval(f'client.walk_{toMove[Exit]}()')
+KeyError: 2
+

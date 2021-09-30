@@ -1,0 +1,57 @@
+start, turn : 1
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 2], lastmove = None
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 3
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 4
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 5
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 6
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 7
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 8
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 9
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 10
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 11
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 12
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 13
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 14
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+error
+game is close

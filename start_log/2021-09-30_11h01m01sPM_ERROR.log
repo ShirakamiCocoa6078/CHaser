@@ -1,0 +1,7 @@
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 481, in main
+    if len(ExitRoof) >= 12 and checkBanBok(ExitRoof):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 40, in checkBanBok
+    if RoofList[i] == RoofList[i+1]:
+IndexError: list index out of range
+

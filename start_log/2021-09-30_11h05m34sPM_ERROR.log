@@ -1,0 +1,7 @@
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 484, in main
+    random.shuffle(ExitList)
+  File "C:\Users\akzm0\AppData\Local\Programs\Python\Python39\lib\random.py", line 359, in shuffle
+    for i in reversed(range(1, len(x))):
+TypeError: object of type 'NoneType' has no len()
+
