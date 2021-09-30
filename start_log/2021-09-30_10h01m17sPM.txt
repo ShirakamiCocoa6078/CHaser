@@ -1,0 +1,149 @@
+start, turn : 1
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = None
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 3
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 4
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 5
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 6
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 7
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 8
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 9
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 10
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 11
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 12
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 13
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 14
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 15
+get ready, value = [2, 2, 2, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = up
+and front 3 is all block, lastMove : up
+start, turn : 16
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 17
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 18
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 19
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 20
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 21
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 22
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 23
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 24
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 25
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 26
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 27
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 28
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 29
+get ready, value = [2, 2, 2, 0, 0, 2, 0, 0, 2], lastmove = right
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+and front 3 is all block, lastMove : right
+start, turn : 30
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 31
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 32
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 33
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 34
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 35
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 36
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = left
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 37
+error
+game is close
