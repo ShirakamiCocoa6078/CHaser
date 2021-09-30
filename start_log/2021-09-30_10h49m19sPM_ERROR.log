@@ -1,0 +1,5 @@
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\akzm0\OneDrive\πŸ≈¡ »≠∏È\CHaser\main_chaser.py", line 442, in main
+    ExitList = [1,3,5,7].remove(Moveto[ExitRoof[2]])
+IndexError: list index out of range
+

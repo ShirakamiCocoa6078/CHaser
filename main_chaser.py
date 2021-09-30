@@ -50,6 +50,18 @@ try:
             except:
                 break
         return res
+    def roofcheak(ExitRoof2):
+        count = 0
+        for i in range(12):
+            if ExitRoof2[i] == ExitRoof2[i+2]:
+                count +=1
+                continue
+            else:
+                break
+        if count < 15:
+            return False
+        else:
+            return True
     def main():
         firstway = None
         Evalue = None
@@ -64,24 +76,12 @@ try:
         firstmove = False
         value = []
         lookDelete = []
-        global ExitRoof
         ExitRoof = []
-        global ExitRoof2
         ExitRoof2 = [] #14턴 양옆
         turn = 0
         client = CHaser.Client()
         firstway = 'up' #random.choice(wayList)
         print(firstway)
-        def checkRoof(ExitRoo):
-            if [ExitRoo[0], ExitRoo[1]] != [ExitRoo[2], ExitRoo[3]]:
-                return False
-            else:
-                return True
-        def checkRoof2(ExitRoo2):
-            if len(ExitRoo2) >= 12:
-                return True
-            else:
-                return False
         try:
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
             print(f"logfile's name = {string}.txt, _ERROR.log")
@@ -92,8 +92,9 @@ try:
                 f.write(f'start, turn : {turn}\n')
                 #print('print variable, ', byunsuDic)
                 value = client.get_ready() #ex : [2, 0, 0, 0, 0, 0, 0, 0, 2], chaserEx.png
-                print(f'get ready, value = {value}, lastmove = {lastMove}, ExitRoof = {ExitRoof}, ExitRoof2 = {ExitRoof2}')
+                print(f'get ready, value = {value}, lastmove = {lastMove}')
                 f.write(f'get ready, value = {value}, lastmove = {lastMove}\n')
+
                 if 1 in [value[1], value[3], value[5], value[7]]: #상대 확인
                     print('enemy')
                     f.write('enemy\n')
@@ -174,7 +175,6 @@ try:
                         firstmove = True
                         viewpoint = movemain[firstway][12:][:-2]
                         lastMove = movemain[firstway][12:][:-2]
-                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                         print('end first moving')
                         f.write('end first moving\n')
                     else:
@@ -192,7 +192,6 @@ try:
                         firstmove = True
                         viewpoint = movemain[firstway][12:][:-2]
                         lastMove = movemain[firstway][12:][:-2]
-                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                         print('end first moving')
                         f.write('end first moving\n')
                 else:
@@ -225,13 +224,11 @@ try:
                                 if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
                                     value = eval(f'client.walk_{Nviewpoint[lastMove]}()')
                                     lastMove = Nviewpoint[lastMove]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                     viewpoint = Nviewpoint[lastMove]
                                     lookbool = False
                                 else:
                                     value = eval(f'client.walk_{viewpoint}()')
                                     lastMove = viewpoint
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                     lookDelete = []
                                     lookbool = False
                             else:
@@ -248,9 +245,9 @@ try:
                         elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
                             print(f'front is block 1, viewpoint = {viewpoint}')
                             f.write(f'front is block 1, viewpoint = {viewpoint}\n')
-                            if checkRoof: #반복해서 왔다갔다 할때
-                                print('roof1')
-                                f.write('roof1')
+                            if [ExitRoof[0], ExitRoof[1]] != [ExitRoof[2], ExitRoof[3]]: #반복해서 도는거 아니면
+                                ExitRoof = []
+                            elif[ExitRoof[0], ExitRoof[1]] == [ExitRoof[2], ExitRoof[3]]:
                                 Exit = None
                                 ExitList = [1,3,5,7].remove(Moveto[ExitRoof[2]])
                                 random.shuffle(ExitList)
@@ -268,22 +265,10 @@ try:
                                     value = eval(f'client.walk_{toMove[Exit]}()')
                                     viewpoint = toMove[Exit]
                                     lastMove = toMove[Exit]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                     ExitRoof = []
-                            elif checkRoof2: #12턴지났을때
-                                print('roof2')
-                                f.write('root2')
-                                count = 0
-                                for i in range(12):
-                                    if ExitRoof2[i] == ExitRoof2[i+2]:
-                                        count +=1
-                                        continue
-                                    else:
-                                        break
-                                if count < 12:
-                                    return False
+                            elif roofcheak: #12턴동안 같은 방향일때
                                 Exit = None
-                                ExitList = [1,3,5,7].remove(Moveto[ExitRoof2[0]])
+                                ExitList = [1,3,5,7].remove(Moveto[ExitRoof2[1]])
                                 random.shuffle(ExitList)
                                 for i in ExitList:
                                     if value[i] == Moveto[Nviewpoint[lastMove]]:
@@ -299,7 +284,6 @@ try:
                                     value = eval(f'client.walk_{toMove[Exit]}()')
                                     viewpoint = toMove[Exit]
                                     lastMove = toMove[Exit]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                     ExitRoof2 = []
 
                             elif value[int(waypoint[viewpoint])] == 2 and value[int(viewleftRight[viewpoint][1])] == 2 and value[int(viewleftRight[viewpoint][0])] == 2: # 가는 방향 3개 다 막혔을때
@@ -309,7 +293,6 @@ try:
                                     value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                     viewpoint = Nviewpoint[viewpoint]
                                     lastMove = Nviewpoint[viewpoint]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                             elif value[int(waypoint[viewpoint])] == 2 and value[int(waypoint[viewpoint]) +1] == 2 and value[int(waypoint[viewpoint]) -1] == 2: # 가는 방향 3개 다 막혔을때
                                 print(f'and front 3 is all block, lastMove : {lastMove}')
                                 f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
@@ -330,7 +313,6 @@ try:
                                     value = eval(f'client.walk_{toMove[Exit]}()')
                                     viewpoint = toMove[Exit]
                                     lastMove = toMove[Exit]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
 
                             elif value[int(viewleftRight[viewpoint][0])] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
                                 print(f'and left and left up open, lastMove : {lastMove}')
@@ -341,7 +323,6 @@ try:
                                     if int(leftRight[viewpoint][1]) == 0:
                                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                                         lastMove = toMove[int(leftRight[viewpoint][0])]
-                                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                     else:
                                         print('but front is block')
                                         f.write('but front is block\n')
@@ -362,11 +343,9 @@ try:
                                             value = eval(f'client.walk_{toMove[Exit]}()')
                                             viewpoint = toMove[Exit]
                                             lastMove = toMove[Exit]
-                                            [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                 else:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                                     lastMove = toMove[int(leftRight[viewpoint][0])]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
 
                             elif value[int(viewleftRight[viewpoint][1])] == 0 and value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
                                 print(f'and right and right up open, lastMove : {lastMove}')
@@ -377,7 +356,6 @@ try:
                                     if int(leftRight[viewpoint][1]) == 0:
                                         value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                                         lastMove = toMove[int(leftRight[viewpoint][1])]
-                                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                     else:
                                         print('but front is block')
                                         f.write('but front is block\n')
@@ -398,11 +376,9 @@ try:
                                             value = eval(f'client.walk_{toMove[Exit]}()')
                                             viewpoint = toMove[Exit]
                                             lastMove = toMove[Exit]
-                                            [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                 else:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                                     lastMove = toMove[int(leftRight[viewpoint][1])]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                             else:
                                 print('find exit')
                                 f.write('find exit')
@@ -423,13 +399,11 @@ try:
                                     value = eval(f'client.walk_{toMove[Exit]}()')
                                     viewpoint = toMove[Exit]
                                     lastMove = toMove[Exit]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                         else: #없을때
                             print(f'moving viewpoint, lastMove : {lastMove}')
                             f.write(f'moving viewpoint, lastMove : {lastMove}\n')
                             value = eval(movemain[viewpoint])
                             lastMove = viewpoint
-                            [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
 
         #-------------------------이동(공간)----------------------------------------------------------------------------
                     elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
@@ -443,7 +417,6 @@ try:
                                 value = eval(f'client.walk_{Nviewpoint[viewpoint]}()')
                                 viewpoint = Nviewpoint[viewpoint]
                                 lastMove = Nviewpoint[viewpoint]
-                                [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                         elif value[int(waypoint[viewpoint])] == 2 and value[int(viewleftRight[viewpoint][1])] == 2 and value[int(viewleftRight[viewpoint][0])] == 2: # 가는 방향 3개 다 막혔을때
                             print(f'and front 3 is all block, lastMove : {lastMove}')
                             f.write(f'and front 3 is all block, lastMove : {lastMove}\n')
@@ -464,7 +437,6 @@ try:
                                 value = eval(f'client.walk_{toMove[Exit]}()')
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
-                                [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
 
                         elif value[int(viewleftRight[viewpoint][0])] == 0 and value[int(leftRight[viewpoint][0])] == 0: #왼쪽과 왼쪽 위 전부 열렸을때
                             print(f'and left and left up open, lastMove : {lastMove}')
@@ -475,7 +447,6 @@ try:
                                 if int(leftRight[viewpoint][1]) == 0:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                                     lastMove = toMove[int(leftRight[viewpoint][0])]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                 else:
                                     print('but front is block')
                                     f.write('but front is block\n')
@@ -496,11 +467,9 @@ try:
                                         value = eval(f'client.walk_{toMove[Exit]}()')
                                         viewpoint = toMove[Exit]
                                         lastMove = toMove[Exit]
-                                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                             else:
                                 value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][0])]}()')
                                 lastMove = toMove[int(leftRight[viewpoint][0])]
-                                [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
 
                         elif value[int(viewleftRight[viewpoint][1])] == 0 and value[int(leftRight[viewpoint][1])] == 0: #오른쪽과 오른쪽 위 전부 열렸을때
                             print(f'and right and right up open, lastMove : {lastMove}')
@@ -511,7 +480,6 @@ try:
                                 if int(leftRight[viewpoint][1]) == 0:
                                     value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                                     lastMove = toMove[int(leftRight[viewpoint][1])]
-                                    [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                                 else:
                                     print('but front is block')
                                     f.write('but front is block\n')
@@ -532,11 +500,9 @@ try:
                                         value = eval(f'client.walk_{toMove[Exit]}()')
                                         viewpoint = toMove[Exit]
                                         lastMove = toMove[Exit]
-                                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                             else:
                                 value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                                 lastMove = toMove[int(leftRight[viewpoint][1])]
-                                [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                         else:
                             print('find exit')
                             f.write('find exit')
@@ -557,13 +523,11 @@ try:
                                 value = eval(f'client.walk_{toMove[Exit]}()')
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
-                                [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
                     else: #없을때
                         print(f'moving viewpoint, lastMove : {lastMove}')
                         f.write(f'moving viewpoint, lastMove : {lastMove}\n')
                         value = eval(movemain[viewpoint])
                         lastMove = viewpoint
-                        [x.append(lastMove) for x in (ExitRoof, ExitRoof2)]
         except OSError:
             logging.error(traceback.format_exc())
             f.write('game is done\n')

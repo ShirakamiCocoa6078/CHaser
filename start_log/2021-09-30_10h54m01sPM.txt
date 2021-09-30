@@ -1,0 +1,9 @@
+start, turn : 1
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 2], lastmove = None
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = up
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+root2error
+game is close
