@@ -63,12 +63,13 @@ def main():
     client = CHaser.Client()
     firstway = random.choice(wayList)
     print(firstway)
-
-    tm = time.localtime(time.time())
-    string = time.strftime('%Y-%m-%d %I:%M:%S %p', tm)
-    f = open(f'./start_log/{string}.txt', 'w')
-    logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
     try:
+        tm = time.localtime(time.time())
+        string = time.strftime('%Y-%m-%d_%Ih%Mm%Ss%p', tm)
+        global f
+        f = open(f"./start_log/{string}.txt", 'w')
+        logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
+        print(f"logfile's name = {string}.txt, _ERROR.log")
         while(True):
             #byunsuDic = f"'viewpoint' : {viewpoint}, 'lastMove' : {lastMove}, 'enemycount' : {enemycount}, 'lookbool' : {lookbool}, 'value' : {value}, 'firstmove' : {firstmove}, 'firstway' : {firstway}, 'Evalue' : {Evalue}, 'enemy' : {enemy}, 'int(wayListNum[firstway[2])' : {int(wayListNum[firstway[2]])}, 'Nviewpoint' : {Nviewpoint}, 'value.index(3)' : {value.index(3)}, 'item_loca' : {item_loca}, 'lookvalue' : {lookvalue}, 'lookbool' : {lookbool}, 'space' : {space}, 'Exit' : {Exit}, 'int(waypoint[viewpoint])' : {int(waypoint[viewpoint])}, 'int[leftRight[viewpoint][1])]' : {int[leftRight[viewpoint][1]]}, 'int[leftRight[viewpoint][0])]' : {int(leftRight[viewpoint][1])}, 'Moveto[Nviewpoint[lastMove]]' : {Moveto[Nviewpoint[lastMove]]}" if firstmove == True else 'sans'
             turn += 1
@@ -107,9 +108,9 @@ def main():
                 value = client.look_left()
                 enemycount += 1
                 continue
-    #오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
-    #오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
-            elif enemycount > 4: #턴 4번 넘었을때 오류 뜬 부분
+            elif enemycount > 4 and 1 in value: #턴 4번 넘었을때
+                print('over 4 turn')
+                f.write('over 4 turn\n')
                 Evalue = [value[0], value[2], value[6], value[8]]
                 enemy = Evalue.index(1)
                 if enemy == 0:#좌측 상단 적
@@ -151,8 +152,6 @@ def main():
                     else:
                         value = eval(random.choice(['client.walk_right()', 'client.walk_down()']))
                         enemycount = 0
-    #오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
-    #오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류오류
             elif firstmove == False:
                 print('first move cheak')
                 f.write('first move cheak\n')
@@ -176,12 +175,24 @@ def main():
                 if 3 in value: #아이템이 있을때
                     print(f'find item, viewpoint = {viewpoint}')
                     f.write(f'find item, viewpoint = {viewpoint}\n')
-                    item_loca = find_index(value, 3)
-                    Nloca = [0,2,6,8]
+                    item_loca3 = find_index(value, 3)
+                    item_loca2 = []
+                    item_loca = []
+                    for i in item_loca3:
+                        item_loca2.append(f'{i}')
+                    Nloca = ['0','2','6','8']
+                    for i in Nloca:
+                        try:
+                            item_loca2.remove(f'{i}')
+                        except:
+                            continue
                     for i in lookDelete:
-                        for e in Nloca:
-                            item_loca.remove(e)
-                        item_loca.remove(i)
+                        try:
+                            item_loca2.remove(i)
+                        except:
+                            continue
+                    for i in item_loca2:
+                        item_loca.append(int(i))
                     if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                         if lookbool:
                             if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
@@ -205,8 +216,8 @@ def main():
                         lookvalue = value
                     #대각선에 아이템이 있을때 대처용 이동
                     elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
-                        print(f'front is block, viewpoint = {viewpoint}')
-                        f.write(f'front is block, viewpoint = {viewpoint}\n')
+                        print(f'front is block 1, viewpoint = {viewpoint}')
+                        f.write(f'front is block 1, viewpoint = {viewpoint}\n')
 
                         if value[Moveto[viewpoint]] == 2 and value[int(leftRight[viewpoint][0])] == 2 and value[int(leftRight[viewpoint][1])] == 2:#보는 방향 앞 옆 전부 막혔을때
                             print('left, right, up all block')
@@ -293,6 +304,25 @@ def main():
                             else:
                                 value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                                 lastMove = toMove[int(leftRight[viewpoint][1])]
+                        else:
+                            print('find exit')
+                            f.write('find exit')
+                            Exit = None
+                            ExitList = [1,3,5,7]
+                            for i in ExitList:
+                                if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                    continue
+                                if value[i] == 2:
+                                    continue
+                                elif value[i] == 0 or value[i] == 3:
+                                    Exit = i
+                                    break
+                                else:
+                                    break
+                            if Exit != None:
+                                value = eval(f'client.walk_{toMove[Exit]}()')
+                                viewpoint = toMove[Exit]
+                                lastMove = toMove[Exit]
                     else: #없을때
                         print(f'moving viewpoint, lastMove : {lastMove}')
                         f.write(f'moving viewpoint, lastMove : {lastMove}\n')
@@ -301,8 +331,8 @@ def main():
 
     #-------------------------이동(공간)----------------------------------------------------------------------------
                 elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
-                    print(f'front is block, viewpoint = {viewpoint}')
-                    f.write(f'front is block, viewpoint = {viewpoint}\n')
+                    print(f'front is block 2, viewpoint = {viewpoint}')
+                    f.write(f'front is block 2, viewpoint = {viewpoint}\n')
 
                     if value[Moveto[viewpoint]] == 2 and value[int(leftRight[viewpoint][0])] == 2 and value[int(leftRight[viewpoint][1])] == 2:#보는 방향 앞 옆 전부 막혔을때
                         print('left, right, up all block')
@@ -389,14 +419,41 @@ def main():
                         else:
                             value = eval(f'client.walk_{toMove[int(leftRight[viewpoint][1])]}()')
                             lastMove = toMove[int(leftRight[viewpoint][1])]
+                    else:
+                        print('find exit')
+                        f.write('find exit')
+                        Exit = None
+                        ExitList = [1,3,5,7]
+                        for i in ExitList:
+                            if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                continue
+                            if value[i] == 2:
+                                continue
+                            elif value[i] == 0 or value[i] == 3:
+                                Exit = i
+                                break
+                            else:
+                                break
+                        if Exit != None:
+                            value = eval(f'client.walk_{toMove[Exit]}()')
+                            viewpoint = toMove[Exit]
+                            lastMove = toMove[Exit]
                 else: #없을때
                     print(f'moving viewpoint, lastMove : {lastMove}')
                     f.write(f'moving viewpoint, lastMove : {lastMove}\n')
                     value = eval(movemain[viewpoint])
                     lastMove = viewpoint
+    except OSError:
+        logging.error(traceback.format_exc())
+        f.write('game is done\n')
+        f.close()
+    except WindowsError:
+        pass
     except:
         logging.error(traceback.format_exc())
+        f.write('error\n')
     finally:
+        f.write('game is close')
         f.close()
 
 

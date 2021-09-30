@@ -1,0 +1,5 @@
+ERROR:root:Traceback (most recent call last):
+  File ".\main_chaser.py", line 205, in main
+    viewpoint = changeViewp[item_loca[0]]
+KeyError: 6
+
