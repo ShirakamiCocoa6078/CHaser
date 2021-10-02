@@ -483,7 +483,7 @@ try:
                                 value = eval(f'client.walk_{toMove[Exit]}()')
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
-                    else: #없을때
+                    else: #블럭이 없을때
                         if len(ExitRoof) >= 12:
                             ExitRoofIf = True
                             for i in range(11):
