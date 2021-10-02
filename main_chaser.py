@@ -76,7 +76,7 @@ try:
         ExitRoof = []
         turn = 0
         client = CHaser.Client()
-        firstway = 'up' #random.choice(wayList)
+        firstway = random.choice(wayList)
         print(firstway)
         try:
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
