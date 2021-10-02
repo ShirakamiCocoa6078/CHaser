@@ -36,19 +36,6 @@ try:
     toMove = {1 : 'up', 3 : 'left', 5 : 'right', 7 : 'down'}
     Moveto = {'up' : 1, 'left' : 3, 'right' : 5, 'down' : 7}
 
-    def checkBanBok(RoofList):
-        for i in range(11):
-            if RoofList[i] == RoofList[i+1]:
-                continue
-            else:
-                return False
-        return True
-    def get_key(val, dic):
-        for key, value in dic.items():
-            if val == value:
-                return key
-        return('키가 없습니다')
-
     def find_index(data, target):
         res = []
         lis = data
@@ -127,41 +114,58 @@ try:
                     if enemy == 0:#좌측 상단 적
                         if value[5] == 0:
                             value = client.walk_right()
+                            viewpoint = 'right'
                             enemycount = 0
                         elif value[7] == 0:
                             value = client.walk_down()
+                            viewpoint= 'down'
                             enemycount = 0
                         else:
-                            value = eval(random.choice(['client.walk_left()', 'client.walk_up()']))
+                            randomValue = random.choice(['client.walk_left()', 'client.walk_up()'])
+                            value = eval(randomValue)
+                            viewpoint = randomValue[12:][:-2]
+                            enemycount = 0
                     elif enemy == 1:
                         if value[3] == 0:
                             value = client.walk_left()
+                            viewpoint = 'left'
                             enemycount = 0
                         elif value[7] == 0:
                             value = client.walk_down()
+                            viewpoint = 'down'
                             enemycount = 0
                         else:
-                            value = eval(random.choice(['client.walk_right()', 'client.walk_up()']))
+                            randomValue = random.choice(['client.walk_right()', 'client.walk_up()'])
+                            value = eval(randomValue)
+                            viewpoint = randomValue[12:][:-2]
                             enemycount = 0
                     elif enemy == 2:
                         if value[1] == 0:
                             value = client.walk_up()
+                            viewpoint = 'up'
                             enemycount = 0
                         elif value[5] == 0:
                             value = client.walk_right()
+                            viewpoint = 'right'
                             enemycount = 0
                         else:
-                            value = eval(random.choice(['client.walk_left()', 'client.walk_right()']))
+                            randomValue = random.choice(['client.walk_left()', 'client.walk_right()'])
+                            value = eval(randomValue)
+                            viewpoint = randomValue[12:][:-2]
                             enemycount = 0
                     elif enemy == 3:
                         if value[1] == 0:
                             value = client.walk_up()
+                            viewpoint = 'up'
                             enemycount = 0
                         elif value[3] == 0:
                             value = client.walk_left()
+                            viewpoint = 'left'
                             enemycount = 0
                         else:
-                            value = eval(random.choice(['client.walk_right()', 'client.walk_down()']))
+                            randomValue = random.choice(['client.walk_right()', 'client.walk_down()'])
+                            value = eval(randomValue)
+                            viewpoint = randomValue[12:][:-2]
                             enemycount = 0
                 elif firstmove == False:
                     print('first move cheak')
@@ -480,31 +484,45 @@ try:
                                 viewpoint = toMove[Exit]
                                 lastMove = toMove[Exit]
                     else: #없을때
-                        if len(ExitRoof) >= 12 and checkBanBok(ExitRoof):
-                            Exit = None
-                            ExitList1 = [1,3,5,7]
-                            ExitList = []
-                            for i in ExitList1:
-                                if i == Moveto[lastMove]:
+                        if len(ExitRoof) >= 12:
+                            ExitRoofIf = True
+                            for i in range(11):
+                                if ExitRoof[i] == ExitRoof[i+1]:
                                     continue
                                 else:
-                                    ExitList.append(int(i))
+                                    ExitRoofIf = False
+                            if ExitRoofIf:
+                                Exit = None
+                                ExitList1 = [1,3,5,7]
+                                ExitList = []
+                                for i in ExitList1:
+                                    if i == Moveto[lastMove]:
+                                        continue
+                                    else:
+                                        ExitList.append(int(i))
 
-                            random.shuffle(ExitList)
-                            for i in ExitList:
-                                if value[i] == Moveto[Nviewpoint[lastMove]]:
-                                    continue
-                                elif value[i] == 2:
-                                    continue
-                                elif value[i] == 0 or value[i] == 3:
-                                    Exit = i
-                                    break
-                                else:
-                                    break
-                            if Exit != None:
-                                value = eval(f'client.walk_{toMove[Exit]}()')
-                                viewpoint = toMove[Exit]
-                                lastMove = toMove[Exit]
+                                random.shuffle(ExitList)
+                                for i in ExitList:
+                                    if value[i] == Moveto[Nviewpoint[lastMove]]:
+                                        continue
+                                    elif value[i] == 2:
+                                        continue
+                                    elif value[i] == 0 or value[i] == 3:
+                                        Exit = i
+                                        break
+                                    else:
+                                        break
+                                if Exit != None:
+                                    value = eval(f'client.walk_{toMove[Exit]}()')
+                                    viewpoint = toMove[Exit]
+                                    lastMove = toMove[Exit]
+                                    ExitRoof = []
+                            else:
+                                print(f'moving viewpoint, lastMove : {lastMove}')
+                                f.write(f'moving viewpoint, lastMove : {lastMove}\n')
+                                value = eval(movemain[viewpoint])
+                                ExitRoof.append(viewpoint)
+                                lastMove = viewpoint
                                 ExitRoof = []
                         else:
                             print(f'moving viewpoint, lastMove : {lastMove}')

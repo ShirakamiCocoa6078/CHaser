@@ -1,0 +1,506 @@
+start, turn : 1
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = None, ExitRoof = []
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [0, 0, 3, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 3, 0, 0, 0, 0, 0, 0]
+find item, viewpoint = right
+moving viewpoint, lastMove : right
+start, turn : 3
+get ready, value = [0, 3, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 3, 0, 0, 0, 0, 0, 0, 0]
+find item, viewpoint = right
+item in LRD
+start, turn : 4
+get ready, value = [0, 3, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 3, 0, 0, 0, 0, 0, 0, 0]
+find item, viewpoint = up
+start, turn : 5
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 2, 0], lastmove = up, ExitRoof = []
+moving, value = [2, 2, 2, 0, 0, 0, 0, 2, 0]
+front is block 2, viewpoint = up
+and front 3 is all block, lastMove : up
+start, turn : 6
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 2], lastmove = left, ExitRoof = []
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 2]
+moving viewpoint, lastMove : left
+start, turn : 7
+get ready, value = [2, 2, 2, 2, 0, 0, 2, 0, 0], lastmove = left, ExitRoof = ['left']
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 8
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = down, ExitRoof = ['left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 9
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = down, ExitRoof = ['left', 'down']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 10
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 11
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 3], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 3]
+find item, viewpoint = down
+moving viewpoint, lastMove : down
+start, turn : 12
+get ready, value = [2, 0, 0, 2, 0, 3, 2, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down']
+moving, value = [2, 0, 0, 2, 0, 3, 2, 0, 0]
+find item, viewpoint = down
+item in LRD
+start, turn : 13
+get ready, value = [2, 0, 0, 2, 0, 3, 2, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down']
+moving, value = [2, 0, 0, 2, 0, 3, 2, 0, 0]
+find item, viewpoint = right
+start, turn : 14
+get ready, value = [0, 0, 0, 2, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down']
+moving, value = [0, 0, 0, 2, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 15
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 16
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 17
+get ready, value = [0, 0, 1, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right']
+enemy_look, viewpoint = right, enemycount = 0
+start, turn : 18
+get ready, value = [0, 0, 1, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right']
+enemy_look, viewpoint = right, enemycount = 1
+start, turn : 19
+get ready, value = [0, 0, 1, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right']
+enemy_look, viewpoint = right, enemycount = 2
+start, turn : 20
+get ready, value = [0, 0, 1, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right']
+enemy_look, viewpoint = right, enemycount = 3
+start, turn : 21
+get ready, value = [0, 0, 1, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right']
+enemy_look, viewpoint = right, enemycount = 4
+start, turn : 22
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 23
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 2, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : right
+start, turn : 24
+get ready, value = [0, 0, 0, 0, 0, 0, 2, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 25
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 26
+get ready, value = [0, 0, 0, 0, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 27
+get ready, value = [0, 0, 0, 0, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 28
+get ready, value = [0, 0, 0, 2, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 2, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 29
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+and front 3 is all block, lastMove : right
+start, turn : 30
+get ready, value = [0, 0, 0, 2, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 2, 0, 0, 0, 0, 0]
+front is block 2, viewpoint = left
+and left and left up open, lastMove : left
+start, turn : 31
+get ready, value = [2, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [2, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 32
+get ready, value = [0, 2, 0, 0, 0, 0, 2, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left']
+moving, value = [0, 2, 0, 0, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 33
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 2, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : left
+start, turn : 34
+get ready, value = [0, 0, 0, 2, 0, 0, 0, 0, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 2, 0, 0, 0, 0, 2]
+front is block 2, viewpoint = left
+and left and left up open, lastMove : left
+start, turn : 35
+get ready, value = [2, 0, 0, 0, 0, 2, 0, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left']
+moving, value = [2, 0, 0, 0, 0, 2, 0, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 36
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 37
+get ready, value = [0, 0, 2, 2, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 2, 2, 0, 0, 0, 0, 0]
+front is block 2, viewpoint = left
+and left and left up open, lastMove : left
+start, turn : 38
+get ready, value = [2, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left']
+moving, value = [2, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 39
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 40
+get ready, value = [0, 0, 2, 0, 0, 0, 3, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 3, 0, 0]
+find item, viewpoint = left
+moving viewpoint, lastMove : left
+start, turn : 41
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = left
+item in LRD
+start, turn : 42
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 43
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 44
+get ready, value = [0, 0, 0, 0, 0, 0, 2, 2, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down']
+moving, value = [0, 0, 0, 0, 0, 0, 2, 2, 2]
+front is block 2, viewpoint = down
+and front 3 is all block, lastMove : down
+start, turn : 45
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+front is block 2, viewpoint = up
+and left and left up open, lastMove : up
+start, turn : 46
+get ready, value = [2, 0, 2, 2, 0, 0, 2, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down']
+moving, value = [2, 0, 2, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 47
+get ready, value = [2, 0, 0, 2, 0, 2, 2, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up']
+moving, value = [2, 0, 0, 2, 0, 2, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 48
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 49
+get ready, value = [2, 2, 0, 2, 0, 0, 2, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up']
+moving, value = [2, 2, 0, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = up
+and right and right up open, lastMove : up
+start, turn : 50
+get ready, value = [2, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up']
+moving, value = [2, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 51
+get ready, value = [0, 0, 0, 2, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 0, 2, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 52
+get ready, value = [0, 0, 0, 0, 0, 0, 2, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 0, 0, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 53
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 54
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 55
+get ready, value = [0, 0, 0, 0, 0, 2, 0, 0, 0], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 0, 0, 0, 2, 0, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 56
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 2]
+front is block 2, viewpoint = up
+and front 3 is all block, lastMove : up
+start, turn : 57
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 2, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [2, 2, 2, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : right
+start, turn : 58
+get ready, value = [2, 2, 2, 0, 0, 0, 2, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right']
+moving, value = [2, 2, 2, 0, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 59
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right']
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 60
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right']
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 61
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right']
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 62
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right']
+moving, value = [2, 2, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 63
+get ready, value = [2, 2, 2, 0, 0, 2, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [2, 2, 2, 0, 0, 2, 0, 0, 0]
+front is block 2, viewpoint = right
+and right and right up open, lastMove : right
+start, turn : 64
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : down
+start, turn : 65
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 66
+get ready, value = [2, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [2, 0, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+and front 3 is all block, lastMove : right
+start, turn : 67
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 68
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 69
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 70
+get ready, value = [0, 0, 0, 0, 0, 0, 2, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 0, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 71
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 2, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : left
+start, turn : 72
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 2]
+moving viewpoint, lastMove : left
+start, turn : 73
+get ready, value = [0, 0, 0, 2, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 2, 0, 0, 0, 0, 0]
+front is block 2, viewpoint = left
+and left and left up open, lastMove : left
+start, turn : 74
+get ready, value = [2, 0, 0, 0, 0, 0, 0, 2, 0], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [2, 0, 0, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : down
+start, turn : 75
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 2]
+moving viewpoint, lastMove : left
+start, turn : 76
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : left
+start, turn : 77
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 0, 0], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 0, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 78
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 79
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 80
+get ready, value = [2, 0, 0, 0, 0, 0, 0, 2, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right']
+moving, value = [2, 0, 0, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : right
+start, turn : 81
+get ready, value = [0, 0, 0, 0, 0, 2, 2, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 2, 2, 0, 0]
+front is block 2, viewpoint = right
+and left and left up open, lastMove : right
+start, turn : 82
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 83
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 2, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 2, 0]
+moving viewpoint, lastMove : right
+start, turn : 84
+get ready, value = [0, 0, 0, 0, 0, 0, 2, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 85
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 86
+get ready, value = [0, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 2, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 87
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 0, 0], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 2, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : right
+start, turn : 88
+get ready, value = [2, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = right, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [2, 0, 2, 0, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = right
+and front 3 is all block, lastMove : right
+start, turn : 89
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 90
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 91
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 92
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 93
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 94
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 95
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 96
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 97
+get ready, value = [0, 0, 2, 0, 0, 2, 2, 2, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 2, 2, 2]
+front is block 2, viewpoint = down
+and front 3 is all block, lastMove : down
+start, turn : 98
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 99
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 100
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 101
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 102
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 103
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 104
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 105
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 106
+get ready, value = [2, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [2, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 107
+get ready, value = [2, 2, 2, 2, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [2, 2, 2, 2, 0, 2, 0, 0, 2]
+front is block 2, viewpoint = up
+left, right, up all block
+start, turn : 108
+get ready, value = [2, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up']
+moving, value = [2, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : up
+start, turn : 109
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 110
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 111
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 112
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 113
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 114
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 115
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 116
+get ready, value = [0, 0, 2, 0, 0, 2, 0, 0, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 0, 0, 2]
+moving viewpoint, lastMove : down
+start, turn : 117
+get ready, value = [0, 0, 2, 0, 0, 2, 2, 2, 2], lastmove = down, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [0, 0, 2, 0, 0, 2, 2, 2, 2]
+front is block 2, viewpoint = down
+and front 3 is all block, lastMove : down
+start, turn : 118
+get ready, value = [2, 0, 0, 0, 0, 0, 2, 2, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down']
+moving, value = [2, 0, 0, 0, 0, 0, 2, 2, 2]
+moving viewpoint, lastMove : left
+start, turn : 119
+get ready, value = [0, 2, 0, 0, 0, 0, 2, 2, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'left']
+moving, value = [0, 2, 0, 0, 0, 0, 2, 2, 2]
+moving viewpoint, lastMove : left
+start, turn : 120
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 2, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'left', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 2, 2]
+moving viewpoint, lastMove : left
+start, turn : 121
+get ready, value = [0, 0, 0, 2, 0, 0, 2, 2, 2], lastmove = left, ExitRoof = ['left', 'down', 'down', 'down', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'left', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'right', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'up', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'down', 'left', 'left', 'left']
+moving, value = [0, 0, 0, 2, 0, 0, 2, 2, 2]
+front is block 2, viewpoint = left
+and right and right up open, lastMove : left
+start, turn : 122

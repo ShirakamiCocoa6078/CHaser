@@ -1,0 +1,146 @@
+start, turn : 1
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = None, ExitRoof = []
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 0], lastmove = left, ExitRoof = []
+moving, value = [2, 0, 0, 2, 0, 0, 2, 2, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 3
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 4
+get ready, value = [0, 2, 2, 0, 0, 2, 0, 2, 2], lastmove = right, ExitRoof = ['right']
+moving, value = [0, 2, 2, 0, 0, 2, 0, 2, 2]
+front is block 2, viewpoint = right
+left, right, up all block
+start, turn : 5
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 6
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 0], lastmove = left, ExitRoof = ['right', 'left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 2, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 7
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 8
+get ready, value = [0, 2, 2, 0, 0, 2, 0, 2, 2], lastmove = right, ExitRoof = ['right', 'left', 'right']
+moving, value = [0, 2, 2, 0, 0, 2, 0, 2, 2]
+front is block 2, viewpoint = right
+left, right, up all block
+start, turn : 9
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 10
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 0], lastmove = left, ExitRoof = ['right', 'left', 'right', 'left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 2, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 11
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 12
+get ready, value = [0, 2, 2, 0, 0, 2, 0, 2, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right']
+moving, value = [0, 2, 2, 0, 0, 2, 0, 2, 2]
+front is block 2, viewpoint = right
+left, right, up all block
+start, turn : 13
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 14
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 0], lastmove = left, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 2, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 15
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 16
+get ready, value = [0, 2, 2, 0, 0, 2, 0, 2, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right']
+moving, value = [0, 2, 2, 0, 0, 2, 0, 2, 2]
+front is block 2, viewpoint = right
+left, right, up all block
+start, turn : 17
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 18
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 0], lastmove = left, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 2, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 19
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 20
+get ready, value = [0, 2, 2, 0, 0, 2, 0, 2, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right']
+moving, value = [0, 2, 2, 0, 0, 2, 0, 2, 2]
+front is block 2, viewpoint = right
+left, right, up all block
+start, turn : 21
+get ready, value = [0, 0, 2, 0, 0, 0, 2, 0, 2], lastmove = right, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right']
+moving, value = [0, 0, 2, 0, 0, 0, 2, 0, 2]
+moving viewpoint, lastMove : right
+start, turn : 22
+get ready, value = [2, 0, 0, 2, 0, 0, 2, 2, 0], lastmove = left, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left']
+moving, value = [2, 0, 0, 2, 0, 0, 2, 2, 0]
+front is block 2, viewpoint = left
+and front 3 is all block, lastMove : left
+start, turn : 23
+get ready, value = [0, 0, 2, 2, 0, 0, 2, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left']
+moving, value = [0, 0, 2, 2, 0, 0, 2, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 24
+get ready, value = [3, 0, 2, 0, 0, 2, 2, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up']
+moving, value = [3, 0, 2, 0, 0, 2, 2, 0, 0]
+find item, viewpoint = up
+moving viewpoint, lastMove : up
+start, turn : 25
+get ready, value = [3, 0, 0, 3, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up']
+moving, value = [3, 0, 0, 3, 0, 2, 0, 0, 2]
+find item, viewpoint = up
+item in LRD
+start, turn : 26
+get ready, value = [3, 0, 0, 3, 0, 2, 0, 0, 2], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up']
+moving, value = [3, 0, 0, 3, 0, 2, 0, 0, 2]
+find item, viewpoint = left
+start, turn : 27
+get ready, value = [0, 3, 0, 2, 0, 2, 2, 0, 0], lastmove = left, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up']
+moving, value = [0, 3, 0, 2, 0, 2, 2, 0, 0]
+find item, viewpoint = left
+item in LRD
+start, turn : 28
+get ready, value = [0, 3, 0, 2, 0, 2, 2, 0, 0], lastmove = left, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up']
+moving, value = [0, 3, 0, 2, 0, 2, 2, 0, 0]
+find item, viewpoint = up
+start, turn : 29
+get ready, value = [0, 0, 0, 0, 0, 0, 2, 2, 2], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up']
+moving, value = [0, 0, 0, 0, 0, 0, 2, 2, 2]
+moving viewpoint, lastMove : up
+start, turn : 30
+get ready, value = [1, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up', 'up']
+enemy_look, viewpoint = up, enemycount = 0
+start, turn : 31
+get ready, value = [1, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up', 'up']
+enemy_look, viewpoint = up, enemycount = 1
+start, turn : 32
+get ready, value = [1, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up', 'up']
+enemy_look, viewpoint = up, enemycount = 2
+start, turn : 33
+get ready, value = [1, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up', 'up']
+enemy_look, viewpoint = up, enemycount = 3
+start, turn : 34
+get ready, value = [1, 0, 2, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'right', 'left', 'up', 'up']
+enemy_look, viewpoint = up, enemycount = 4
+start, turn : 35
