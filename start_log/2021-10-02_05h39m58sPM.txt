@@ -1,0 +1,193 @@
+start, turn : 1
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 3, 0], lastmove = None, ExitRoof = []
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [2, 2, 2, 2, 0, 0, 2, 0, 3], lastmove = left, ExitRoof = []
+moving, value = [2, 2, 2, 2, 0, 0, 2, 0, 3]
+find item, viewpoint = left
+front is block 1, viewpoint = left
+left, right, up all block
+start, turn : 3
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 3, 0], lastmove = left, ExitRoof = []
+moving, value = [2, 2, 2, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = right
+item in LRD
+start, turn : 4
+get ready, value = [2, 2, 2, 0, 0, 0, 0, 3, 0], lastmove = left, ExitRoof = []
+moving, value = [2, 2, 2, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 5
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 6
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 7
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 8
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 9
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 10
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 11
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 12
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 13
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 14
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 15
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 16
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 17
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 18
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 19
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 20
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 21
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 22
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 23
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 24
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 25
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 26
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 27
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 28
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 29
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 30
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 31
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 3], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 3]
+find item, viewpoint = down
+start, turn : 32
+get ready, value = [0, 2, 0, 0, 0, 0, 0, 3, 3], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 0, 0, 3, 3]
+find item, viewpoint = down
+start, turn : 33
+get ready, value = [0, 2, 0, 0, 0, 3, 0, 0, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 3, 0, 0, 0]
+find item, viewpoint = down
+item in LRD
+start, turn : 34
+get ready, value = [0, 2, 0, 0, 0, 3, 0, 0, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 2, 0, 0, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 35
+get ready, value = [2, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [2, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 36
+get ready, value = [2, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [2, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 37
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 38
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 39
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 40
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 41
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 42
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 43
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 44
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 45
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 46
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 47
+get ready, value = [0, 0, 0, 2, 0, 3, 0, 0, 0], lastmove = right, ExitRoof = []
+moving, value = [0, 0, 0, 2, 0, 3, 0, 0, 0]
+find item, viewpoint = right
+start, turn : 48

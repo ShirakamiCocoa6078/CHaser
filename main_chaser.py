@@ -1,3 +1,4 @@
+from os import terminal_size
 import CHaser
 import random
 import time
@@ -236,6 +237,7 @@ try:
                             viewpoint = changeViewp[item_loca[0]]
                             value = eval(f'client.look_{viewpoint}()')
                             lookvalue = value
+                            lookbool = True
                         #대각선에 아이템이 있을때 대처용 이동
                         elif value[int(waypoint[viewpoint])] == 2:#바로앞(가는방향)이 벽일때
                             print(f'front is block 1, viewpoint = {viewpoint}')
