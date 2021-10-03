@@ -11,7 +11,7 @@ string = time.strftime('%Y-%m-%d_%Ih%Mm%Ss%p', tm)
 f = open(f"./start_log/{string}.txt", 'w')
 
 #ファンインソンが作りました。 完全に完成されたバージョンです。
-#エーラなおしたバージョンです。
+#エラーなおしたバージョンです。
 try:
     wayList = ['up','left','down','right']
 
@@ -63,7 +63,7 @@ try:
         ExitRoof = []
         turn = 0
         client = CHaser.Client()
-        firstway = random.choice(wayList)
+        firstway = 'left' #random.choice(wayList)
         print(firstway)
         try:
             logging.basicConfig(filename=f'./start_log/{string}_ERROR.log', level=logging.ERROR)
@@ -221,17 +221,20 @@ try:
                             item_loca.append(int(i))
                         if value[int(waypoint[viewpoint])] == 3:#아이템 정면일때
                             if lookbool:
-                                if lookvalue[Moveto[viewpoint]] == 2 and lookvalue[int(leftRight[viewpoint][0])] == 2 and lookvalue[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
+                                if lookvalue[4] == 2 and value[int(leftRight[viewpoint][0])] == 2 and value[int(leftRight[viewpoint][1])] == 2: #look한거에 앞옆 벽일때
+                                    print(f'NviewLastMove, lookvalue = {lookvalue}')
                                     value = eval(f'client.walk_{Nviewpoint[lastMove]}()')
                                     lastMove = Nviewpoint[lastMove]
                                     viewpoint = Nviewpoint[lastMove]
                                     lookbool = False
                                 else:
+                                    print('walk viewpoint')
                                     value = eval(f'client.walk_{viewpoint}()')
                                     lastMove = viewpoint
                                     lookDelete = []
                                     lookbool = False
                             else:
+                                print('view')
                                 value = eval(f'client.look_{viewpoint}()')
                                 lookvalue = value
                                 lookbool = True

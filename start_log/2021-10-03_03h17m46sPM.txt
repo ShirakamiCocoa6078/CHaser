@@ -1,0 +1,35 @@
+start, turn : 1
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = None, ExitRoof = []
+first move cheak
+end first moving
+start, turn : 2
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 3
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = []
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 4
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = []
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 5
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = ['down']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 6
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = ['down']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 7
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 0, 0], lastmove = up, ExitRoof = ['down']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+moving viewpoint, lastMove : up
+start, turn : 8
+get ready, value = [0, 0, 0, 0, 0, 0, 0, 3, 0], lastmove = down, ExitRoof = ['down', 'down']
+moving, value = [0, 0, 0, 0, 0, 0, 0, 3, 0]
+find item, viewpoint = down
+start, turn : 9
+error
+game is close
