@@ -11,7 +11,7 @@ string = time.strftime('%Y-%m-%d_%Ih%Mm%Ss%p', tm)
 f = open(f"./start_log/{string}.txt", 'w')
 
 #ファンインソンが作りました。 完全に完成されたバージョンです。
-
+#エーラなおしたバージョンです。
 try:
     wayList = ['up','left','down','right']
 
