@@ -1,7 +1,5 @@
 import CHaser
-#1.벽 확인
-#2.9칸 이내 다이아 확인
-def checkValue(value): #주위 9칸 탐색
+def checkValue(value):
     if 3 in value:
         return 'item'
     elif 1 in value:
